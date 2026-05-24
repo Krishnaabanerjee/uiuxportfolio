@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Banerjee — Creative UI/UX Designer & Developer</title>
+  <meta name="description" content="Portfolio of Krishna Banerjee, a UI/UX Designer who designs things that feel obvious to use. Available for full time roles & freelance projects.">
+  
+  <!-- SEO & Open Graph Metadata -->
+  <meta property="og:title" content="Krishna Banerjee — Creative UI/UX Designer & Developer">
+  <meta property="og:description" content="Portfolio of Krishna Banerjee, a UI/UX Designer who designs things that feel obvious to use.">
+  <meta property="og:type" content="website">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- Tech Design Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Main Container -->
+  <div class="page-container">
+    
+    <!-- Navigation Header -->
+    <header class="header">
+      <div class="logo magnetic">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </span>
+        <span class="logo-text">Krishna Banerjee</span>
+      </div>
+      
+      <nav class="nav">
+        <a href="#projects" class="nav-link magnetic">Explore Projects</a>
+        <a href="#about" class="nav-link magnetic">About Me</a>
+        <a href="#lab" class="nav-link magnetic">Creative Lab</a>
+        <a href="#resume" class="nav-link magnetic">Resume</a>
+      </nav>
+      
+      <div class="header-right">
+        <button class="btn btn-connect magnetic">Let's Connect</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      
+      <!-- Hero Section -->
+      <section class="hero-section" id="home">
+        
+        <!-- Status Badges -->
+        <div class="hero-badges">
+          <div class="role-badge">UI UX Designer - West Bengal, India</div>
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for full time roles & freelance projects</span>
+          </div>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero-title">
+          I design things that<br>feel <span class="highlight">obvious</span> to use.
+        </h1>
+
+        <!-- Hero Subtitle -->
+        <p class="hero-subtitle">
+          Started as a developer. Fell in love with design. Now I bring both worlds together, building interfaces with a coder's logic and a designer's eye.
+        </p>
+
+        <!-- Call to Action -->
+        <div class="hero-cta">
+          <button class="btn btn-primary magnetic">View My Work</button>
+        </div>
+
+        <!-- Floating Parallax Images -->
+        <div class="floating-images-wrap">
+          <!-- Far Left: Scenic Park -->
+          <div class="floating-img-card card-scenic" data-parallax-factor="0.08" data-tilt-factor="0.15">
+            <div class="img-wrapper">
+              <img src="assets/scenic_park.jpg?v=2" alt="Lush scenic green park and mountain trail background">
+            </div>
+          </div>
+          
+          <!-- Middle Left: Woman with Bicycle -->
+          <div class="floating-img-card card-bicycle" data-parallax-factor="0.05" data-tilt-factor="-0.1">
+            <div class="img-wrapper">
+              <img src="assets/person_bicycle.jpg?v=2" alt="A portrait of a woman standing with a bicycle on a road">
+            </div>
+          </div>
+          
+          <!-- Middle Right: Modern Laptop Setup -->
+          <div class="floating-img-card card-laptop" data-parallax-factor="0.06" data-tilt-factor="0.12">
+            <div class="img-wrapper">
+              <img src="assets/laptop_setup_v2.png?v=2" alt="A modern laptop showing ambient keyboard glow">
+            </div>
+          </div>
+          
+          <!-- Far Right: Female UI/UX Designer Portrait (Krishna) -->
+          <div class="floating-img-card card-portrait" data-parallax-factor="0.09" data-tilt-factor="-0.08">
+            <div class="img-wrapper">
+              <img src="assets/developer_portrait.jpg?v=2" alt="Female UI UX designer portrait close up smiling">
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Footer Footer Controls -->
+        <div class="hero-footer">
+          <div class="social-links">
+            <a href="mailto:banerjeekrishna@example.com" class="social-btn magnetic" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+            
+            <a href="https://www.behance.net/krishnabanerjee" target="_blank" rel="noopener noreferrer" class="social-btn magnetic" aria-label="Behance">
+              <!-- Custom crisp Behance SVG icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M8.2 5c1.8 0 3.1.4 3.9 1.2.8.8 1.2 1.9 1.2 3.2 0 .9-.2 1.7-.7 2.3-.5.6-1.2 1.1-2.1 1.3 1.1.2 1.9.8 2.5 1.5.6.8.9 1.8.9 3 0 1.6-.5 2.8-1.5 3.7C11.3 22 9.6 22.4 7.4 22.4H0V5h8.2zm-.9 6.8c.8 0 1.3-.2 1.7-.5.3-.3.5-.8.5-1.4 0-.6-.2-1.1-.5-1.3-.3-.3-.9-.4-1.7-.4H3.1v3.6h4.2zm.4 7.4c.9 0 1.5-.2 1.9-.6.4-.4.6-.9.6-1.6s-.2-1.2-.6-1.6c-.4-.4-1.1-.6-2-.6H3.1v4.4h4.6zm13.1-6.1c0 2.2-.6 3.9-1.8 5.1-1.2 1.2-2.9 1.8-5 1.8-2 0-3.6-.6-4.8-1.8S7.4 15.3 7.4 13c0-2.3.6-4.1 1.8-5.3 1.2-1.2 2.8-1.8 4.8-1.8 1.9 0 3.5.6 4.6 1.7 1.1 1.1 1.7 2.8 1.7 4.9v.6h-9.7c.1 1.1.4 1.9.9 2.4.5.5 1.2.8 2.1.8 1.3 0 2.2-.6 2.6-1.7h3.1zm-3.1-2.2c-.1-.9-.4-1.5-.8-1.9-.4-.4-1.1-.6-1.9-.6-.8 0-1.4.2-1.9.6-.5.4-.8 1.1-.9 1.9h5.5zM12 2.8h7.4V4.4H12V2.8z"></path>
+              </svg>
+            </a>
+            
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn magnetic" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="scroll-explore">
+            <span class="arrow-down">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </span>
+            <span class="scroll-text">Scroll to explore</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Selected Work Section -->
+      <section class="projects-section" id="projects">
+        <div class="projects-container">
+          
+          <div class="projects-header">
+            <span class="projects-tag">— SELECTED WORK</span>
+            <h2 class="projects-title">Projects that made me think hard.</h2>
+            <p class="projects-subtitle">From 48 hour sprints to months long SaaS products. Here's where my thinking lives.</p>
+          </div>
+
+          <div class="projects-grid">
+            
+            <!-- Card 01: Iraje PAM Dashboard redesign (Full-width) -->
+            <a href="https://www.behance.net/gallery/245617841/Enterprise-Security-UI-UX-Case-Study" target="_blank" rel="noopener noreferrer" class="project-card card-full" data-project="01">
+              <div class="project-info">
+                <span class="project-number">01</span>
+                <div class="project-tags">
+                  <span class="project-tag">Enterprise UX</span>
+                  <span class="project-tag">Team Lead</span>
+                  <span class="project-tag">Dashboard</span>
+                </div>
+                <h3 class="project-name">Iraje PAM Dashboard redesign</h3>
+                <p class="project-desc">Led a team of 3 to redesign a security software dashboard used by enterprises. Identified critical usability gaps, restructured information hierarchy, and reduced cognitive load from research to high-fidelity prototype.</p>
+              </div>
+              <div class="project-visual bg-split-diagonal">
+                <div class="visual-img-wrapper">
+                  <img src="assets/project_iraje.jpg?v=3" alt="Iraje PAM Dashboard Redesign Laptop Mockups">
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 02: Artistry Connect (Half-width) -->
+            <a href="https://www.behance.net/gallery/232113433/Artistry-Connect-The-48-Hour-Design-Sprint" target="_blank" rel="noopener noreferrer" class="project-card" data-project="02">
+              <div class="project-info">
+                <span class="project-number">02</span>
+                <div class="project-tags">
+                  <span class="project-tag">Mobile App</span>
+                  <span class="project-tag">48 Hr Sprint</span>
+                  <span class="project-tag">Solo Project</span>
+                </div>
+                <h3 class="project-name">Artistry Connect</h3>
+                <p class="project-desc">Designed Artistry Connect, a mobile app connecting artists with clients, during a 48-hour design sprint at NID IT Institute. Delivered end-to-end UX including user flows, information architecture, and high-fidelity UI in Figma. Project appreciated by the institute.</p>
+              </div>
+              <div class="project-visual bg-gradient-blue">
+                <div class="visual-img-wrapper">
+                  <img src="assets/project_artistry.jpg?v=2" alt="Artistry Connect Mobile App Mockups">
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 03: TUDU Task Management (Half-width) -->
+            <a href="https://www.behance.net/gallery/225492697/TUDU-Task-Management-App-UI-Case-Study" target="_blank" rel="noopener noreferrer" class="project-card" data-project="03">
+              <div class="project-info">
+                <span class="project-number">03</span>
+                <div class="project-tags">
+                  <span class="project-tag">Mobile App</span>
+                  <span class="project-tag">UX Research</span>
+                  <span class="project-tag">Design System</span>
+                  <span class="project-tag">Scaling</span>
+                </div>
+                <h3 class="project-name">TUDU Task Management</h3>
+                <p class="project-desc">Built from user research outward, transformed messy daily workflows into a calm, clear mobile interface users actually want to open.</p>
+              </div>
+              <div class="project-visual bg-gradient-pink">
+                <div class="visual-img-wrapper">
+                  <img src="assets/project_tudu.jpg?v=2" alt="TUDU Task Management Mobile App Mockups">
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 04: Scheduling Messages on WhatsApp (Half-width) -->
+            <a href="https://www.behance.net/gallery/249298499/Scheduling-Messages-on-WhatsApp-UIUX-Case-Study" target="_blank" rel="noopener noreferrer" class="project-card" data-project="04">
+              <div class="project-info">
+                <span class="project-number">04</span>
+                <div class="project-tags">
+                  <span class="project-tag">Concept Feature</span>
+                  <span class="project-tag">WhatsApp</span>
+                  <span class="project-tag">Mobile UI</span>
+                </div>
+                <h3 class="project-name">Scheduling Messages on WhatsApp</h3>
+                <p class="project-desc">Designed a concept scheduling feature for WhatsApp — conducted user research (173 respondents, 91% feature demand), then delivered native-feeling UI including entry point, scheduling sheet, and chat state. End to end in 3 days.</p>
+              </div>
+              <div class="project-visual bg-gradient-green">
+                <div class="visual-img-wrapper">
+                  <img src="assets/project_whatsapp.jpg?v=2" alt="WhatsApp Message Scheduling Mockups">
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 05: Designathon by Desinare Community (Half-width) -->
+            <a href="https://www.behance.net/gallery/231325539/Club-Duelz-Designathon-Project" target="_blank" rel="noopener noreferrer" class="project-card" data-project="05">
+              <div class="project-info">
+                <span class="project-number">05</span>
+                <div class="project-tags">
+                  <span class="project-tag">Team Lead</span>
+                  <span class="project-tag">Featured Best Work</span>
+                  <span class="project-tag">Sports UX</span>
+                </div>
+                <h3 class="project-name">Designathon by Desinare Community</h3>
+                <p class="project-desc">Led a team of 4 to design Club Duelz, a real-time match management app for local football players in India - during a 5-day Designathon by Desinare Community. Handled branding, UX research, interaction design, and high-fidelity prototyping. Featured in Best Work category.</p>
+              </div>
+              <div class="project-visual bg-gradient-orange">
+                <div class="visual-img-wrapper">
+                  <img src="assets/project_designathon.jpg?v=2" alt="Designathon Club Duelz Mobile App Mockup">
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 06: Internship at The Sales Studio (Half-width - NDA Locked) -->
+            <div class="project-card card-locked" data-project="06">
+              <div class="project-info">
+                <span class="project-number">06</span>
+                <div class="project-tags">
+                  <span class="project-tag">Internship</span>
+                  <span class="project-tag">SaaS</span>
+                  <span class="project-tag">PWA</span>
+                </div>
+                <h3 class="project-name">Internship at The Sales Studio</h3>
+                <p class="project-desc">Worked as a UI/UX Design Intern at The Sales Studio (Nov 2021 - Mar 2022), contributing to SaaS, PWA, and content sharing platforms. Designed responsive interfaces, user flows, and developer-ready prototypes with a focus on usability and scalable user experiences.</p>
+              </div>
+              <div class="project-visual bg-flat-gray visual-locked">
+                <div class="visual-img-wrapper img-blurred">
+                  <img src="assets/project_salesstudio.jpg?v=2" alt="The Sales Studio SaaS Internship Logo Presentation">
+                </div>
+                <div class="lock-overlay">
+                  <div class="lock-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <span class="lock-label">NDA Protected</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 07: View All Projects on Behance (Half-width interactive redirect block) -->
+            <a href="https://www.behance.net/krishnabanerjee" target="_blank" rel="noopener noreferrer" class="project-card behance-redirect-card magnetic">
+              <div class="behance-content">
+                <div class="behance-arrow">
+                  <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <span class="behance-text">View All Projects on Behance</span>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section class="about-section" id="about">
+        <div class="about-container">
+          <div class="about-grid">
+            <!-- Left Column: Biography & Stats -->
+            <div class="about-left">
+              <span class="about-tag">— ABOUT ME</span>
+              <h2 class="about-title">I started as a developer.<br>I stayed for design.</h2>
+              <div class="about-bio">
+                <p>Got my BSc in <strong>Computer Science</strong> from SKBU University, but somewhere between building frontend interfaces with HTML, CSS, JavaScript, and React Js, I realized I was most alive figuring out <strong>why the button should go there</strong>, not how to code it.</p>
+                <p>Self-taught through late nights, webinars, and a lot of trial and error. Then an internship. Then a real design role at The Sales Studio, shipping UI for a <strong>PWA, SaaS</strong> platform, and content product.</p>
+                <p>I'm not just a designer who thinks in pixels. I think in <strong>systems, in code, in how real users interact when they're tired or distracted.</strong></p>
+                <p>Outside of design: I draw, doodle, cycle, chase mountains, obsessively notice how flowers are designed by nature.</p>
+                <p>I'm building <strong>Kryzen</strong>, my personal design brand, a creative space where design, storytelling, and innovation come together to create meaningful digital experiences.</p>
+              </div>
+              
+              <!-- Stats Grid with interactive tickers -->
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span class="stat-value" data-target="20" data-suffix="+">0+</span>
+                  <span class="stat-label">Design Projects</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" data-target="3" data-suffix="">0</span>
+                  <span class="stat-label">Design Challenges</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" data-target="1.5" data-suffix="yr" data-decimals="1">0.0yr</span>
+                  <span class="stat-label">Experience</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" data-target="855" data-suffix="+">0+</span>
+                  <span class="stat-label">Behance Project Views</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right Column: Interactive ID Card Mockup & Pendulum Swing -->
+            <div class="about-right">
+              <div class="id-card-trigger-zone" id="idCardTrigger">
+                <!-- Suspended Photo Assembly (Drops from top boundary of section) -->
+                <div class="id-card-assembly" id="idCardAssembly">
+                  <div class="badge-system-wrapper">
+                    <!-- Starburst Background Graphic (Behind glass backing) -->
+                    <div class="about-star-wrapper">
+                      <svg class="about-star-graphic" viewBox="0 0 100 100">
+                        <polygon points="50,0 54,38 90,30 58,48 80,80 50,56 20,80 42,48 10,30 46,38" fill="#5E1EE7"/>
+                      </svg>
+                    </div>
+
+                    <!-- Layer 1: Slightly Rotated Frosted Glass backing card (Under photo) -->
+                    <div class="badge-glass-backing"></div>
+                    
+                    <!-- Layer 2: Front Photo Card (Rounded corners & border) -->
+                    <div class="about-photo-card">
+                      <img src="assets/about_portrait.jpg" alt="Krishna Banerjee Portrait">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Infinite Skills Marquee -->
+          <div class="skills-marquee-container">
+            <div class="marquee-track">
+              <!-- Set 1 -->
+              <div class="marquee-slide">
+                <div class="skill-logo-wrap magnetic" data-name="ProtoPie">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5v-3.8c-1.3-.3-2.2-1.5-2.2-2.9 0-1.7 1.3-3 3-3V4c3.9.4 7 3.7 7 7.8 0 4.3-3.5 7.7-7.8 7.7v-2zm3-6.5c0-.6-.4-1-1-1v2c.6 0 1-.4 1-1z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Notion">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M4.6 2h14.8c1.4 0 2.6 1.2 2.6 2.6v14.8c0 1.4-1.2 2.6-2.6 2.6H4.6C3.2 22 2 20.8 2 19.4V4.6C2 3.2 3.2 2 4.6 2zm4.1 4.7H7.2v10.5h1.5l5.2-7.5v7.5h1.5V6.7h-1.5l-5.2 7.5V6.7z" /></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="ChatGPT">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M21.74 11.23c.27-.47.41-1 .41-1.54 0-1.77-1.44-3.21-3.21-3.21-.36 0-.71.06-1.04.18C17.26 5.09 15.77 4 14.04 4c-.75 0-1.46.21-2.07.57C11.16 3.19 9.68 2.1 8 2.1c-1.77 0-3.21 1.44-3.21 3.21 0 .21.02.42.06.63C3.21 6.57 2 8.04 2 9.77c0 .65.2 1.28.57 1.83C1.48 12.35 1 13.56 1 14.81c0 1.77 1.44 3.21 3.21 3.21.2 0 .4-.02.6-.06.74 1.34 2.17 2.24 3.8 2.24.81 0 1.57-.25 2.21-.69.75 1.42 2.24 2.39 3.95 2.39 1.77 0 3.21-1.44 3.21-3.21 0-.17-.01-.34-.04-.51 1.69-.64 2.87-2.27 2.87-4.14 0-.85-.25-1.66-.69-2.33.37-.56.57-1.22.57-1.92 0-.2-.02-.4-.05-.6zm-8.83 8.78c-.7 0-1.33-.31-1.75-.81.07-.04.16-.09.24-.14l4.28-2.47c.43-.25.7-.71.7-1.21v-4.95l1.63.94c.05.03.09.07.13.11v4.75c0 2.08-1.69 3.78-3.78 3.78zm-6.27-2.61c-.35-.61-.55-1.31-.55-2.07 0-.08.01-.17.02-.25.07.04.15.09.24.14l4.28 2.47c.43.25.96.25 1.39 0l4.29-2.47v1.88l-4.28 2.47c-.07.04-.15.06-.23.08l-5.16-2.98zm-1.89-6.38c0-.76.22-1.47.6-2.08l.19.11 4.28 2.47c.43.25.7.71.7 1.21v4.94l-1.63-.94c-.05-.03-.09-.07-.13-.11v-4.75c0-.46-.1-.89-.28-1.28L4.75 11zm1.75-4.8c.7 0 1.33.31 1.75.81-.07.04-.16.09-.24.14L5.97 9.62c-.43.25-.7.71-.7 1.21v4.95l-1.63-.94c-.05-.03-.09-.07-.13-.11V9.98c0-2.08 1.69-3.78 3.78-3.78zm6.27 2.61c.35.61.55 1.31.55 2.07 0 .08-.01.17-.02.25-.07-.04-.15-.09-.24-.14L8.98 9.07c-.43-.25-.96-.25-1.39 0L3.3 11.54V9.66l4.28-2.47c.07-.04.15-.06.23-.08l5.16 2.98zm5.67 3.4c0 .76-.22 1.47-.6 2.08l-.19-.11-4.28-2.47c-.43-.25-.7-.71-.7-1.21V5.59l1.63.94c.05.03.09.07.13.11v4.75c0 .46.1.89.28 1.28l3.65 2.11z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Spline">
+                  <img src="assets/logo_spline.png" class="skill-logo-img" alt="Spline Logo">
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Adobe">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 2h8.1v20h-5.2l-2.6-6.1h-4.3l-2.6 6.1H2V2h8.1L13.9 2zm-2 5.1L8.7 12h4.5l-1.3-4.9z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="iP">
+                  <img src="assets/logo_ip.png" class="skill-logo-img" alt="iP Logo">
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Procreate">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M18.8 6.5c-1.3-1.3-3.6-2-6.8-2C7.3 4.5 4 7 4 10.8c0 3.2 2.2 5.2 5 6.2-.8-.4-1.5-1-2-1.8C6.3 14 6 12.8 6 11.5c0-2.8 2.2-4.5 6-4.5 2.5 0 4.2.5 5.2 1.3-.2-.7-.6-1.3-1.1-1.8H18.8zm-2.3 8.3c1-.2 1.5-.7 1.5-1.5 0-.8-.7-1.5-1.8-1.5-1.1 0-1.8.7-1.8 1.5 0 .8.7 1.5 1.8 1.5h.3z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Canva">
+                  <img src="assets/logo_canva.png" class="skill-logo-img" alt="Canva Logo">
+                </div>
+              </div>
+              
+              <!-- Set 2 (Identical Duplicate for infinite seamless scroll) -->
+              <div class="marquee-slide">
+                <div class="skill-logo-wrap magnetic" data-name="ProtoPie">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5v-3.8c-1.3-.3-2.2-1.5-2.2-2.9 0-1.7 1.3-3 3-3V4c3.9.4 7 3.7 7 7.8 0 4.3-3.5 7.7-7.8 7.7v-2zm3-6.5c0-.6-.4-1-1-1v2c.6 0 1-.4 1-1z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Notion">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M4.6 2h14.8c1.4 0 2.6 1.2 2.6 2.6v14.8c0 1.4-1.2 2.6-2.6 2.6H4.6C3.2 22 2 20.8 2 19.4V4.6C2 3.2 3.2 2 4.6 2zm4.1 4.7H7.2v10.5h1.5l5.2-7.5v7.5h1.5V6.7h-1.5l-5.2 7.5V6.7z" /></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="ChatGPT">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M21.74 11.23c.27-.47.41-1 .41-1.54 0-1.77-1.44-3.21-3.21-3.21-.36 0-.71.06-1.04.18C17.26 5.09 15.77 4 14.04 4c-.75 0-1.46.21-2.07.57C11.16 3.19 9.68 2.1 8 2.1c-1.77 0-3.21 1.44-3.21 3.21 0 .21.02.42.06.63C3.21 6.57 2 8.04 2 9.77c0 .65.2 1.28.57 1.83C1.48 12.35 1 13.56 1 14.81c0 1.77 1.44 3.21 3.21 3.21.2 0 .4-.02.6-.06.74 1.34 2.17 2.24 3.8 2.24.81 0 1.57-.25 2.21-.69.75 1.42 2.24 2.39 3.95 2.39 1.77 0 3.21-1.44 3.21-3.21 0-.17-.01-.34-.04-.51 1.69-.64 2.87-2.27 2.87-4.14 0-.85-.25-1.66-.69-2.33.37-.56.57-1.22.57-1.92 0-.2-.02-.4-.05-.6zm-8.83 8.78c-.7 0-1.33-.31-1.75-.81.07-.04.16-.09.24-.14l4.28-2.47c.43-.25.7-.71.7-1.21v-4.95l1.63.94c.05.03.09.07.13.11v4.75c0 2.08-1.69 3.78-3.78 3.78zm-6.27-2.61c-.35-.61-.55-1.31-.55-2.07 0-.08.01-.17.02-.25.07.04.15.09.24.14l4.28 2.47c.43.25.96.25 1.39 0l4.29-2.47v1.88l-4.28 2.47c-.07.04-.15.06-.23.08l-5.16-2.98zm-1.89-6.38c0-.76.22-1.47.6-2.08l.19.11 4.28 2.47c.43.25.7.71.7 1.21v4.94l-1.63-.94c-.05-.03-.09-.07-.13-.11v-4.75c0-.46-.1-.89-.28-1.28L4.75 11zm1.75-4.8c.7 0 1.33.31 1.75.81-.07.04-.16.09-.24.14L5.97 9.62c-.43.25-.7.71-.7 1.21v4.95l-1.63-.94c-.05-.03-.09-.07-.13-.11V9.98c0-2.08 1.69-3.78 3.78-3.78zm6.27 2.61c.35.61.55 1.31.55 2.07 0 .08-.01.17-.02.25-.07-.04-.15-.09-.24-.14L8.98 9.07c-.43-.25-.96-.25-1.39 0L3.3 11.54V9.66l4.28-2.47c.07-.04.15-.06.23-.08l5.16 2.98zm5.67 3.4c0 .76-.22 1.47-.6 2.08l-.19-.11-4.28-2.47c-.43-.25-.7-.71-.7-1.21V5.59l1.63.94c.05.03.09.07.13.11v4.75c0 .46.1.89.28 1.28l3.65 2.11z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Spline">
+                  <img src="assets/logo_spline.png" class="skill-logo-img" alt="Spline Logo">
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Adobe">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 2h8.1v20h-5.2l-2.6-6.1h-4.3l-2.6 6.1H2V2h8.1L13.9 2zm-2 5.1L8.7 12h4.5l-1.3-4.9z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="iP">
+                  <img src="assets/logo_ip.png" class="skill-logo-img" alt="iP Logo">
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Procreate">
+                  <svg class="skill-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M18.8 6.5c-1.3-1.3-3.6-2-6.8-2C7.3 4.5 4 7 4 10.8c0 3.2 2.2 5.2 5 6.2-.8-.4-1.5-1-2-1.8C6.3 14 6 12.8 6 11.5c0-2.8 2.2-4.5 6-4.5 2.5 0 4.2.5 5.2 1.3-.2-.7-.6-1.3-1.1-1.8H18.8zm-2.3 8.3c1-.2 1.5-.7 1.5-1.5 0-.8-.7-1.5-1.8-1.5-1.1 0-1.8.7-1.8 1.5 0 .8.7 1.5 1.8 1.5h.3z"/></svg>
+                </div>
+                <div class="skill-logo-wrap magnetic" data-name="Canva">
+                  <img src="assets/logo_canva.png" class="skill-logo-img" alt="Canva Logo">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Bring Section (Sticky Card Stacking Effect) -->
+      <section class="skills-stack-section" id="skills-stack">
+        <div class="skills-stack-container">
+          <div class="skills-stack-grid">
+            
+            <!-- Left Sticky Text Column -->
+            <div class="skills-stack-left">
+              <span class="skills-stack-tag">— WHAT I BRING</span>
+              <h2 class="skills-stack-title">Design skills focused on clarity, usability, and impact.</h2>
+            </div>
+            
+            <!-- Right Stacking Cards Column -->
+            <div class="skills-stack-right">
+              
+              <!-- Card 1 -->
+              <div class="skill-stack-card" data-index="1">
+                <h3 class="skill-card-title">Problem Solving & UX Research</h3>
+                <p class="skill-card-text">User interviews, usability testing, competitive audits, personas, journey mapping. I find what's actually broken before designing.</p>
+                <div class="skill-card-divider"></div>
+              </div>
+              
+              <!-- Card 2 -->
+              <div class="skill-stack-card" data-index="2">
+                <h3 class="skill-card-title">Design System & Scalability</h3>
+                <p class="skill-card-text">With smart components and variables, I seamlessly integrate features while maintaining consistency.</p>
+                <div class="skill-card-divider"></div>
+              </div>
+              
+              <!-- Card 3 -->
+              <div class="skill-stack-card" data-index="3">
+                <h3 class="skill-card-title">Interaction & Iteration</h3>
+                <p class="skill-card-text">I design high-fidelity, clickable prototypes and refine them through stakeholder and user feedback until they're production-ready.</p>
+                <div class="skill-card-divider"></div>
+              </div>
+              
+              <!-- Card 4 -->
+              <div class="skill-stack-card" data-index="4">
+                <h3 class="skill-card-title">Product Thinking</h3>
+                <p class="skill-card-text">I think beyond screens: feature prioritization, user flows, accessibility, and how design decisions affect real outcomes.</p>
+                <div class="skill-card-divider"></div>
+              </div>
+              
+              <!-- Card 5 -->
+              <div class="skill-stack-card" data-index="5">
+                <h3 class="skill-card-title">Collaboration & Handoff</h3>
+                <p class="skill-card-text">Organized Figma files, developer-ready specs, and clear communication. Teams don't have to guess what I meant.</p>
+                <div class="skill-card-divider"></div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- How I Work / My Design Process Section -->
+      <section class="process-section" id="process">
+        <div class="process-container">
+          <div class="process-header">
+            <span class="process-tag">— How I Work</span>
+            <h2 class="process-title">My design process</h2>
+          </div>
+          
+          <div class="process-grid">
+            
+            <!-- Card 01: Understand -->
+            <div class="process-card">
+              <div class="process-card-header">
+                <div class="process-icon-wrap">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="process-card-icon">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </div>
+                <span class="process-number">01</span>
+              </div>
+              <h3 class="process-card-title">Understand</h3>
+              <p class="process-card-text">I obsess over the problem before touching Figma. User interviews, competitor audits, heuristic reviews.</p>
+            </div>
+            
+            <!-- Card 02: Map -->
+            <div class="process-card">
+              <div class="process-card-header">
+                <div class="process-icon-wrap">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="process-card-icon">
+                    <line x1="6" y1="3" x2="6" y2="15"></line>
+                    <circle cx="18" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <path d="M18 9a9 9 0 0 1-9 9"></path>
+                  </svg>
+                </div>
+                <span class="process-number">02</span>
+              </div>
+              <h3 class="process-card-title">Map</h3>
+              <p class="process-card-text">Flows, information architecture, rough wireframes. I work ugly first so the thinking is clear.</p>
+            </div>
+            
+            <!-- Card 03: Design -->
+            <div class="process-card">
+              <div class="process-card-header">
+                <div class="process-icon-wrap">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="process-card-icon">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <span class="process-number">03</span>
+              </div>
+              <h3 class="process-card-title">Design</h3>
+              <p class="process-card-text">High-fidelity UI with components and variables.. built to hand off, not just look good in a presentation</p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Interactive AI Chatbot Widget -->
+    <div class="chatbot-widget">
+      <!-- Chat Toggle Trigger -->
+      <button class="chatbot-toggle magnetic" id="chatToggle" aria-label="Open chat assistant">
+        <div class="bot-icon-wrapper">
+          <svg class="bot-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <svg class="close-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+        <span class="pulse-ring"></span>
+        <span class="chat-badge-dot"></span>
+      </button>
+
+      <!-- Chat Drawer -->
+      <div class="chatbot-drawer" id="chatDrawer">
+        
+        <!-- Header -->
+        <div class="chat-header">
+          <div class="bot-avatar">
+            <span class="avatar-dot"></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+              <circle cx="12" cy="5" r="2"></circle>
+              <path d="M12 7v4"></path>
+              <line x1="8" y1="16" x2="8" y2="16.01"></line>
+              <line x1="16" y1="16" x2="16" y2="16.01"></line>
+            </svg>
+          </div>
+          <div class="header-info">
+            <h4>KB Assistant</h4>
+            <span class="status-online">Online</span>
+          </div>
+          <button class="chat-close-btn magnetic" id="chatClose" aria-label="Close chat">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Chat History -->
+        <div class="chat-messages" id="chatMessages">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Predefined Quick Queries -->
+        <div class="chat-quick-queries" id="quickQueries">
+          <button class="quick-btn" data-query="Who is Krishna?">About Krishna</button>
+          <button class="quick-btn" data-query="What services do you offer?">Services</button>
+          <button class="quick-btn" data-query="Are you available for hiring?">Availability</button>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+          <textarea id="chatInput" rows="1" placeholder="Type a message..." aria-label="Message to assistant"></textarea>
+          <button class="chat-send-btn magnetic" id="chatSend" aria-label="Send message">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NDA Toast Notification -->
+  <div class="nda-toast" id="ndaToast">
+    <div class="nda-toast-lock">
+      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+    </div>
+    <span>This project is NDA protected and cannot be viewed.</span>
+  </div>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script src="src/cursor.js"></script>
+  <script src="src/parallax.js"></script>
+  <script src="src/chatbot.js"></script>
+
+</body>
+</html>
