@@ -109,13 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Simulated Bot Responses
   const responses = {
-    greeting: "Hi there! 👋 I am Krishna's AI portfolio assistant. Ask me anything about her designs, coding skills, or availability!",
+    greeting: "Hi there! 👋 I am Krishna's AI portfolio assistant. Ask me anything about her designs, process, or availability!",
     
-    about: "<b>Krishna Banerjee</b> is a creative UI/UX Designer & Frontend Developer based in West Bengal, India. <br><br>Starting her journey as a developer, she fell in love with aesthetic layouts. Now she bridges both worlds—combining solid engineering logic with a meticulous eye for pixel-perfect design.",
+    about: "<b>Krishna Banerjee</b> is a creative UI/UX Designer based in West Bengal, India. <br><br>Having started her journey with a Computer Science background, she has a strong foundation in frontend coding, but she fell in love with design and transitioned fully. She now works exclusively as a UI/UX designer, combining systems thinking with a designer's eye to build intuitive, user-centered digital products.",
     
-    services: "Krishna offers professional services in:<br>🎯 <b>UI/UX Design</b> (Figma wireframes, high-fidelity mockups, and interactive prototypes)<br>💻 <b>Frontend Development</b> (Semantic HTML5, CSS3/Sass layouts, and clean JS logic)<br>✨ <b>Interaction Design</b> (High-end scroll effects, animations, micro-interactions)",
+    services: "Krishna offers professional services in:<br>🎯 <b>UI/UX Design</b> (Mobile apps, SaaS dashboards, and Web UI/UX)<br>✨ <b>Interaction Design</b> (High-fidelity interactive prototypes, micro-interactions, and motion design)<br>🎨 <b>Design Systems</b> (Scalable component libraries, variables, and developer-ready handoff specs in Figma)",
     
-    availability: "Yes, she is! 🟢 Krishna is actively seeking <b>full-time roles</b> and <b>freelance contracts</b>. <br><br>To discuss project ideas or openings, feel free to click the <b>'Let's Connect'</b> button in the header or email her directly at <a href='mailto:banerjeekrishna@example.com' style='color:var(--accent-purple);font-weight:700;text-decoration:underline;'>banerjeekrishna@example.com</a>!",
+    availability: "Yes, she is! 🟢 Krishna is actively seeking <b>full-time roles</b> and <b>freelance contracts</b>. <br><br>To discuss project ideas or openings, feel free to click the <b>'Let's Connect'</b> button in the header or email her directly at <a href='mailto:banerjeekrishnaaa35@gmail.com' style='color:var(--accent-purple);font-weight:700;text-decoration:underline;'>banerjeekrishnaaa35@gmail.com</a>!",
     
     projects: "Krishna has built some amazing projects that made her think hard! Here are the featured designs in her Selected Work section:<br><br>1. 🛡️ <b>Iraje PAM Dashboard redesign</b> (Enterprise UX)<br>🎨 <b>Artistry Connect</b> (Artist-client Matchmaking App)<br>📅 <b>TUDU Task Management</b> (Calm task workflow UI)<br>💬 <b>Scheduling Messages on WhatsApp</b> (Mobile UX concept)<br>🏆 <b>Designathon Club Duelz</b> (Sports UX match manager)<br>💼 <b>The Sales Studio Internship</b> (SaaS & PWA designs)<br><br>Feel free to scroll down to her <b>Selected Work</b> section to view detailed write-ups and visual mockups for each of them!",
     

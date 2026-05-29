@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(updateCursor);
 
   // 3. Hover Interactions (Scale, Morph, Contrast Adjustments)
-  const interactiveSelector = 'a, button, .social-btn, .quick-btn, .chat-close-btn, .floating-img-card, .highlight, .project-card, .stat-card, .skill-logo-wrap, .skill-stack-card, .process-card';
+  const interactiveSelector = 'a, button, .social-btn, .quick-btn, .chat-close-btn, .floating-img-card, .highlight, .project-card, .stat-card, .skill-logo-wrap, .skill-stack-card, .process-card, .lab-card';
   
   document.body.addEventListener('mouseover', (e) => {
     const target = e.target.closest(interactiveSelector);
@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Detect if we are hovering over the purple projects section background (and not on a dark card)
     const inProjectsSection = e.target.closest('.projects-section');
     const inProjectCard = e.target.closest('.project-card');
+    const inFooterSection = e.target.closest('.footer-section');
+    const inFooterStar = e.target.closest('.footer-star-wrap') || e.target.closest('.footer-star-svg');
     
     // Detect if we are hovering over an element that has or will turn into the accent purple color
     const isPurpleTarget = target && (
@@ -76,10 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
                            target.closest('.chat-send-btn') ||
                            target.closest('.quick-btn'));
 
-    if (isPurpleTarget || (inProjectsSection && !inProjectCard)) {
-      cursor.classList.add('on-purple');
-    } else {
+    if (inFooterStar) {
       cursor.classList.remove('on-purple');
+      cursor.classList.add('on-star');
+    } else {
+      cursor.classList.remove('on-star');
+      if (isPurpleTarget || (inProjectsSection && !inProjectCard) || inFooterSection) {
+        cursor.classList.add('on-purple');
+      } else {
+        cursor.classList.remove('on-purple');
+      }
     }
 
     if (!target) return;
@@ -89,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.classList.add('hovering');
     } else if (target.classList.contains('card-locked')) {
       cursor.classList.add('hovering-locked');
-    } else if ((target.classList.contains('project-card') && !target.classList.contains('behance-redirect-card')) || target.classList.contains('process-card')) {
+    } else if ((target.classList.contains('project-card') && !target.classList.contains('behance-redirect-card')) || target.classList.contains('process-card') || target.classList.contains('lab-card')) {
       cursor.classList.add('hovering-card');
     } else if (target.classList.contains('stat-card')) {
       cursor.classList.add('hovering');
@@ -108,11 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Maintain contrast class check on mouseout
     const inProjectsSection = e.target.closest('.projects-section');
     const inProjectCard = e.target.closest('.project-card');
+    const inFooterSection = e.target.closest('.footer-section');
+    const inFooterStar = e.target.closest('.footer-star-wrap') || e.target.closest('.footer-star-svg');
     
-    if (inProjectsSection && !inProjectCard) {
-      cursor.classList.add('on-purple');
-    } else {
+    if (inFooterStar) {
       cursor.classList.remove('on-purple');
+      cursor.classList.add('on-star');
+    } else {
+      cursor.classList.remove('on-star');
+      if ((inProjectsSection && !inProjectCard) || inFooterSection) {
+        cursor.classList.add('on-purple');
+      } else {
+        cursor.classList.remove('on-purple');
+      }
     }
 
     if (!target) return;

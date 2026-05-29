@@ -146,6 +146,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // C. Skills Stack to Process Section Parallax curtain reveal (Desktop only)
+    if (window.innerWidth > 992) {
+      const processSection = document.getElementById('process');
+      const skillsStackSection = document.getElementById('skills-stack');
+      if (processSection && skillsStackSection) {
+        const processRect = processSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        if (processRect.top < viewportHeight && processRect.bottom > 0) {
+          const progress = viewportHeight - processRect.top;
+          // Slowly move skills stack down as process section overlaps it
+          const targetTranslateY = progress * 0.4;
+          skillsStackSection.style.transform = `translate3d(0, ${targetTranslateY}px, 0)`;
+        } else if (processRect.top >= viewportHeight) {
+          skillsStackSection.style.transform = 'translate3d(0, 0, 0)';
+        }
+      }
+    } else {
+      const skillsStackSection = document.getElementById('skills-stack');
+      if (skillsStackSection) {
+        skillsStackSection.style.transform = 'none';
+      }
+    }
+
     requestAnimationFrame(animateParallax);
   }
   
@@ -390,4 +414,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   initProcessScrollReveal();
+
+  // 7. CREATIVE LAB: BENTO GRID CARDS SCROLL REVEAL (Sequential Staggered Spring Reveal)
+  function initLabScrollReveal() {
+    const labCards = document.querySelectorAll('.lab-card');
+    const labSection = document.getElementById('lab');
+    
+    if (!labCards.length || !labSection) return;
+    
+    const labObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          labCards.forEach(card => {
+            card.classList.add('visible');
+          });
+          labObserver.unobserve(labSection);
+        }
+      });
+    }, {
+      threshold: 0.15 // Trigger when 15% of the section is visible
+    });
+    
+    labObserver.observe(labSection);
+  }
+  
+  initLabScrollReveal();
 });
