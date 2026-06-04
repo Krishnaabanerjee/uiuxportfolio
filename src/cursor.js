@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(updateCursor);
 
   // 3. Hover Interactions (Scale, Morph, Contrast Adjustments)
-  const interactiveSelector = 'a, button, .social-btn, .quick-btn, .chat-close-btn, .floating-img-card, .highlight, .project-card, .stat-card, .skill-logo-wrap, .skill-stack-card, .process-card, .lab-card';
+  const interactiveSelector = 'a, button, .social-btn, .quick-btn, .chat-close-btn, .floating-img-card, .highlight, .project-card, .stat-card, .skill-logo-wrap, .skill-stack-card, .process-card, .lab-card, .event-card, .back-link, .blog-card, .doodle-card, .passion-card, .photo-card, .interaction-card';
   
   document.body.addEventListener('mouseover', (e) => {
     const target = e.target.closest(interactiveSelector);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                            target.classList.contains('highlight') || 
                            target.closest('.btn') || 
                            target.closest('.chatbot-toggle') || 
-                           target.closest('.chat-send-btn') ||
+                           target.closest('.chat-send-btn') || 
                            target.closest('.quick-btn'));
 
     if (inFooterStar) {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.classList.add('hovering');
     } else if (target.classList.contains('card-locked')) {
       cursor.classList.add('hovering-locked');
-    } else if ((target.classList.contains('project-card') && !target.classList.contains('behance-redirect-card')) || target.classList.contains('process-card') || target.classList.contains('lab-card')) {
+    } else if ((target.classList.contains('project-card') && !target.classList.contains('behance-redirect-card')) || target.classList.contains('process-card') || target.classList.contains('lab-card') || target.classList.contains('event-card') || target.classList.contains('blog-card') || target.classList.contains('passion-card') || target.classList.contains('doodle-card') || target.classList.contains('photo-card') || target.classList.contains('interaction-card')) {
       cursor.classList.add('hovering-card');
     } else if (target.classList.contains('stat-card')) {
       cursor.classList.add('hovering');

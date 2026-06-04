@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Photography & Cinematography — Krishna Banerjee</title>
+  <meta name="description" content="Mobile photography & cinematography experiments by Krishna Banerjee. Framing the world with intention.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body style="background-color: #0A0A0A;">
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- Tech Design Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Main Container -->
+  <div class="photography-page-container">
+    
+    <!-- Top Back Navigation Header (Outside sticky fold for natural flow) -->
+    <header class="photography-page-header">
+      <a href="index.html" class="back-link magnetic">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="back-arrow-svg">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to home
+      </a>
+    </header>
+
+    <h1 class="photography-page-title">Mobile photography &<br>cinematography experiments</h1>
+
+    <!-- Sticky Fold Zone Container (Scroll Track) -->
+    <div class="sticky-fold-zone">
+      
+      <!-- Pinned Deck Wrapper (Fixed perspective viewpoint) -->
+      <div class="deck-wrapper">
+        
+        <!-- Live Pagination Progress -->
+        <div class="deck-pagination" id="deckPagination">01 / 16</div>
+        
+        <!-- Photo Card 01 -->
+        <div class="photo-card" data-index="0">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003395.jpg" alt="Silhouette Branch">
+            <div class="photo-meta">
+              <span class="photo-label">01 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 02 -->
+        <div class="photo-card" data-index="1">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003396.jpg" alt="Yellow Flower Contrast">
+            <div class="photo-meta">
+              <span class="photo-label">02 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 03 -->
+        <div class="photo-card" data-index="2">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003397.jpg" alt="Forest Road Perspective">
+            <div class="photo-meta">
+              <span class="photo-label">03 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 04 -->
+        <div class="photo-card" data-index="3">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003398.jpg" alt="Coffee Cup Reflection">
+            <div class="photo-meta">
+              <span class="photo-label">04 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 05 -->
+        <div class="photo-card" data-index="4">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003399.jpg" alt="Sunset Palm Silhouettes">
+            <div class="photo-meta">
+              <span class="photo-label">05 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 06 -->
+        <div class="photo-card" data-index="5">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003400.jpg" alt="Autumn Orange Foliage">
+            <div class="photo-meta">
+              <span class="photo-label">06 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 07 -->
+        <div class="photo-card" data-index="6">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003401.jpg" alt="Dewdrops on Leaf Detail">
+            <div class="photo-meta">
+              <span class="photo-label">07 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 08 -->
+        <div class="photo-card" data-index="7">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003402.jpg" alt="Rubik's Cube Neon Glow">
+            <div class="photo-meta">
+              <span class="photo-label">08 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 09 -->
+        <div class="photo-card" data-index="8">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003403.jpg" alt="Golden Candle Flame">
+            <div class="photo-meta">
+              <span class="photo-label">09 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 10 -->
+        <div class="photo-card" data-index="9">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003404.jpg" alt="Headphones Macro Detail">
+            <div class="photo-meta">
+              <span class="photo-label">10 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 11 -->
+        <div class="photo-card" data-index="10">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003405.jpg" alt="Evening Street Cart Glow">
+            <div class="photo-meta">
+              <span class="photo-label">11 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 12 -->
+        <div class="photo-card" data-index="11">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003406.jpg" alt="Arch Windows Geometry">
+            <div class="photo-meta">
+              <span class="photo-label">12 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 13 -->
+        <div class="photo-card" data-index="12">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003407.jpg" alt="Rainy Street Lamp Reflection">
+            <div class="photo-meta">
+              <span class="photo-label">13 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 14 -->
+        <div class="photo-card" data-index="13">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003408.jpg" alt="Open Book Under Warm Light">
+            <div class="photo-meta">
+              <span class="photo-label">14 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 15 -->
+        <div class="photo-card" data-index="14">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003409.jpg" alt="River Lock Gate Architecture">
+            <div class="photo-meta">
+              <span class="photo-label">15 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 16 -->
+        <div class="photo-card" data-index="15">
+          <div class="photo-card-inner">
+            <img src="assets/Photography/Frame 1000003410.jpg" alt="Colorful Snack Chips Stack">
+            <div class="photo-meta">
+              <span class="photo-label">16 / 16</span>
+              <span class="photo-title">mobile photography</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Lightbox Modal for Art Gallery -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close magnetic" id="lightboxClose" aria-label="Close Gallery">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev magnetic" id="lightboxPrev" aria-label="Previous Image">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-next magnetic" id="lightboxNext" aria-label="Next Image">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Footer Section (Identical to homepage footer) -->
+  <footer class="footer-section" id="footer">
+    <div class="footer-container">
+      
+      <!-- Top Row: Links and Description -->
+      <div class="footer-top-row">
+        <!-- Left Column: Links -->
+        <div class="footer-links-col">
+          <div class="footer-links">
+            <a href="mailto:banerjeekrishnaaa35@gmail.com" class="footer-link">EMAIL</a>
+            <a href="https://www.linkedin.com/in/krishna-banerjee-384554218" target="_blank" class="footer-link">LINKEDIN</a>
+            <a href="https://behance.net/krishnaabanerjee" target="_blank" class="footer-link">BEHANCE</a>
+            <a href="https://instagram.com/kryzen_ui_ux" target="_blank" class="footer-link">@KRYZEN_UI_UX</a>
+          </div>
+        </div>
+        
+        <!-- Right Column: Paragraph -->
+        <div class="footer-desc-col">
+          <p class="footer-description">Open to freelance projects and full-time UI/UX roles. If you have a product that needs better design thinking then reach out.</p>
+        </div>
+      </div>
+      
+      <!-- Bottom Row: Heading (Full Width for 2-row layout) -->
+      <div class="footer-heading-row">
+        <h2 class="footer-heading">Let's build something <br>worth using.</h2>
+      </div>
+      
+      <!-- Giant Star Graphic (absolutely positioned behind/cropped) -->
+      <div class="footer-star-wrap">
+        <svg viewBox="0 0 200 200" class="footer-star-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,10 113.8,66.2 163.6,36.4 133.8,86.2 190,100 133.8,113.8 163.6,163.6 113.8,133.8 100,190 86.2,133.8 36.4,163.6 66.2,113.8 10,100 66.2,86.2 36.4,36.4 86.2,66.2" fill="#B7E900" />
+        </svg>
+      </div>
+      
+      <!-- Bottom Metadata Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Krishna Banerjee. Designed in Figma.</p>
+        <p class="footer-location">West Bengal, India · Open to Remote</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script src="src/cursor.js"></script>
+  
+  <!-- Scroll 3D Deck & Lightbox Gallery Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = Array.from(document.querySelectorAll('.photo-card'));
+      const track = document.querySelector('.sticky-fold-zone');
+      const pagination = document.getElementById('deckPagination');
+
+      // 1. Scroll-Driven 3D Deck Animation
+      const updateDeck = () => {
+        if (window.innerWidth <= 768) {
+          // Disable 3D transforms on mobile viewports for simple vertical layout
+          cards.forEach(card => {
+            card.style.opacity = '';
+            card.style.transform = '';
+            card.style.zIndex = '';
+            card.style.pointerEvents = 'auto';
+          });
+          return;
+        }
+
+        const rect = track.getBoundingClientRect();
+        const totalScroll = track.offsetHeight - window.innerHeight;
+        // Current scroll within the track
+        let currentScroll = -rect.top;
+        currentScroll = Math.max(0, Math.min(totalScroll, currentScroll));
+        
+        let progress = currentScroll / totalScroll;
+        progress = Math.max(0, Math.min(1, progress));
+        
+        const cardCount = cards.length;
+        
+        // Active index goes from 0 to cardCount - 1
+        const activePosition = progress * (cardCount - 1);
+        const activeIdx = Math.round(activePosition);
+        
+        if (pagination) {
+          pagination.textContent = `${String(activeIdx + 1).padStart(2, '0')} / ${String(cardCount).padStart(2, '0')}`;
+        }
+        
+        cards.forEach((card, idx) => {
+          // Calculate offset relative to current scroll position
+          const offset = activePosition - idx;
+          
+          if (offset > -1.5 && offset < 1.5) {
+            card.classList.add('active-range');
+            
+            // Only allow interaction (clicks) on the primary active card
+            card.style.pointerEvents = (Math.abs(offset) < 0.4) ? 'auto' : 'none';
+            
+            if (offset >= 0) {
+              // Outgoing card (scrolled past): flip forward/down on a bottom hinge
+              const tProgress = Math.min(1.2, offset);
+              const rotateX = tProgress * -90; // swing top edge forward and down
+              const translateY = tProgress * 220; // slide down
+              const translateZ = tProgress * 120; // pull forward slightly
+              const opacity = Math.max(0, 1 - tProgress);
+              
+              card.style.transformOrigin = 'bottom center';
+              card.style.transform = `translate3d(0, ${translateY}px, ${translateZ}px) rotateX(${rotateX}deg)`;
+              card.style.opacity = opacity;
+              card.style.zIndex = 100 - idx; // stack older on top as they flip down
+            } else {
+              // Incoming card (rising from background stack)
+              const tProgress = -offset; // positive value from 0 to 1.5
+              const translateZ = tProgress * -300; // pushed back
+              const rotateX = tProgress * 15; // tilted slightly back
+              const translateY = tProgress * -25; // staggered slightly higher
+              const opacity = Math.max(0, 1 - tProgress * 0.7);
+              
+              card.style.transformOrigin = 'center center';
+              card.style.transform = `translate3d(0, ${translateY}px, ${translateZ}px) rotateX(${rotateX}deg)`;
+              card.style.opacity = opacity;
+              card.style.zIndex = 10 - idx; // stack incoming cards underneath
+            }
+          } else {
+            card.classList.remove('active-range');
+            card.style.opacity = 0;
+            card.style.pointerEvents = 'none';
+            if (offset >= 1.5) {
+              // Fully scrolled past: flat down
+              card.style.transform = 'translate3d(0, 220px, 120px) rotateX(-90deg)';
+            } else {
+              // Deeper in stack: far back
+              card.style.transform = 'translate3d(0, -25px, -450px) rotateX(22.5deg)';
+            }
+          }
+        });
+      };
+
+      // Trigger scroll calculations
+      window.addEventListener('scroll', updateDeck);
+      window.addEventListener('resize', updateDeck);
+      updateDeck(); // Run initial calculation
+
+      // 2. Lightbox Gallery Viewer
+      const modal = document.getElementById('lightboxModal');
+      const modalImg = document.getElementById('lightboxImg');
+      const modalCaption = document.getElementById('lightboxCaption');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+      
+      // Sort in index order (0 to 15)
+      const sortedCards = [...cards].sort((a, b) => {
+        return parseInt(a.getAttribute('data-index')) - parseInt(b.getAttribute('data-index'));
+      });
+      
+      let currentIndex = -1;
+
+      const updateLightboxImage = (index) => {
+        if (index < 0 || index >= sortedCards.length) return;
+        currentIndex = index;
+        const currentCard = sortedCards[currentIndex];
+        const img = currentCard.querySelector('img');
+
+        modalImg.style.opacity = '0';
+        modalImg.style.transform = 'scale(0.95)';
+        
+        setTimeout(() => {
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          modalCaption.textContent = `${img.alt} — Mobile Experiments`;
+          
+          modalImg.onload = () => {
+            modalImg.style.opacity = '1';
+            modalImg.style.transform = 'scale(1)';
+          };
+          setTimeout(() => {
+            modalImg.style.opacity = '1';
+            modalImg.style.transform = 'scale(1)';
+          }, 50);
+        }, 150);
+      };
+
+      const openLightbox = (card) => {
+        currentIndex = sortedCards.indexOf(card);
+        if (currentIndex === -1) return;
+
+        modal.classList.add('active');
+        updateLightboxImage(currentIndex);
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      const nextImage = () => {
+        if (sortedCards.length <= 1) return;
+        let nextIdx = (currentIndex + 1) % sortedCards.length;
+        updateLightboxImage(nextIdx);
+      };
+
+      const prevImage = () => {
+        if (sortedCards.length <= 1) return;
+        let prevIdx = (currentIndex - 1 + sortedCards.length) % sortedCards.length;
+        updateLightboxImage(prevIdx);
+      };
+
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openLightbox(card);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', nextImage);
+      prevBtn.addEventListener('click', prevImage);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === modal.querySelector('.lightbox-content')) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+          nextImage();
+        } else if (e.key === 'ArrowLeft') {
+          prevImage();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

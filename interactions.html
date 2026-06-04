@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaction Experiments — Krishna Banerjee</title>
+  <meta name="description" content="Micro-interactions, motion concepts, and UI patterns explored by Krishna Banerjee. Just to see what's possible.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- Tech Design Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Main Container -->
+  <div class="interactions-page-container">
+    
+    <!-- Top Back Navigation Header -->
+    <header class="interactions-page-header">
+      <a href="index.html" class="back-link magnetic">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="back-arrow-svg">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to home
+      </a>
+    </header>
+
+    <h1 class="interactions-page-title">Designs I explore just to see what's possible</h1>
+
+    <!-- Interactions Grid Layout -->
+    <div class="interactions-grid">
+      <!-- Generated Dynamically via JavaScript -->
+    </div>
+
+  </div>
+
+  <!-- Video Lightbox Modal -->
+  <div class="lightbox-modal" id="videoLightboxModal">
+    <button class="lightbox-close magnetic" id="lightboxClose" aria-label="Close Gallery">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev magnetic" id="lightboxPrev" aria-label="Previous Video">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-next magnetic" id="lightboxNext" aria-label="Next Video">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <!-- Full Video Tag with controls inside modal -->
+      <video id="lightboxVideo" class="lightbox-video-player" controls autoplay loop playsinline></video>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Footer Section (Identical to homepage footer) -->
+  <footer class="footer-section" id="footer">
+    <div class="footer-container">
+      
+      <!-- Top Row: Links and Description -->
+      <div class="footer-top-row">
+        <!-- Left Column: Links -->
+        <div class="footer-links-col">
+          <div class="footer-links">
+            <a href="mailto:banerjeekrishnaaa35@gmail.com" class="footer-link">EMAIL</a>
+            <a href="https://www.linkedin.com/in/krishna-banerjee-384554218" target="_blank" class="footer-link">LINKEDIN</a>
+            <a href="https://behance.net/krishnaabanerjee" target="_blank" class="footer-link">BEHANCE</a>
+            <a href="https://instagram.com/kryzen_ui_ux" target="_blank" class="footer-link">@KRYZEN_UI_UX</a>
+          </div>
+        </div>
+        
+        <!-- Right Column: Paragraph -->
+        <div class="footer-desc-col">
+          <p class="footer-description">Open to freelance projects and full-time UI/UX roles. If you have a product that needs better design thinking then reach out.</p>
+        </div>
+      </div>
+      
+      <!-- Bottom Row: Heading (Full Width for 2-row layout) -->
+      <div class="footer-heading-row">
+        <h2 class="footer-heading">Let's build something <br>worth using.</h2>
+      </div>
+      
+      <!-- Giant Star Graphic (absolutely positioned behind/cropped) -->
+      <div class="footer-star-wrap">
+        <svg viewBox="0 0 200 200" class="footer-star-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,10 113.8,66.2 163.6,36.4 133.8,86.2 190,100 133.8,113.8 163.6,163.6 113.8,133.8 100,190 86.2,133.8 36.4,163.6 66.2,113.8 10,100 66.2,86.2 36.4,36.4 86.2,66.2" fill="#B7E900" />
+        </svg>
+      </div>
+      
+      <!-- Bottom Metadata Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Krishna Banerjee. Designed in Figma.</p>
+        <p class="footer-location">West Bengal, India · Open to Remote</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script src="src/cursor.js"></script>
+  
+  <!-- Lightbox Gallery Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Define the interaction videos array
+      // Users can easily add or remove videos here
+      const interactionVideos = [
+        {
+          title: "Sunflower Animation",
+          src: "assets/interation video/sunflower.mp4",
+          theme: "yellow", // 'yellow' or 'charcoal' or 'white'
+          layout: "contain" // 'contain' or 'cover' or 'laptop'
+        },
+        {
+          title: "Shapes Play Animation",
+          src: "assets/interation video/shapes play.mp4",
+          theme: "charcoal",
+          layout: "cover"
+        },
+        {
+          title: "Custom Cursor Interaction",
+          src: "assets/interation video/custom cursor.mp4",
+          theme: "charcoal",
+          layout: "cover"
+        },
+        {
+          title: "Micro UX Animation",
+          src: "assets/interation video/micro-animation.mp4",
+          theme: "charcoal",
+          layout: "cover"
+        }
+      ];
+
+      const gridContainer = document.querySelector('.interactions-grid');
+      gridContainer.innerHTML = ''; // Clear container
+
+      // Generate cards dynamically
+      interactionVideos.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'interaction-card';
+        if (item.theme === 'yellow') card.classList.add('card-sunflower');
+        else if (item.theme === 'charcoal') card.classList.add('card-charcoal');
+        else if (item.theme === 'white') card.classList.add('card-cupcake');
+
+        card.setAttribute('data-index', index);
+
+        let mediaContent = '';
+        if (item.layout === 'laptop') {
+          mediaContent = `
+            <div class="laptop-device">
+              <div class="laptop-screen">
+                <video src="${item.src}" autoplay loop muted playsinline class="interaction-video"></video>
+              </div>
+              <div class="laptop-base"></div>
+            </div>
+          `;
+        } else {
+          mediaContent = `<video src="${item.src}" autoplay loop muted playsinline class="interaction-video"></video>`;
+        }
+
+        card.innerHTML = `
+          <div class="interaction-media-wrap">
+            ${mediaContent}
+            <div class="play-overlay">
+              <div class="play-btn-circle">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="interaction-meta">
+            <span class="interaction-title">${item.title}</span>
+          </div>
+        `;
+
+        gridContainer.appendChild(card);
+      });
+
+      // Now query the generated cards and set up the lightbox
+      const cards = Array.from(document.querySelectorAll('.interaction-card'));
+      const modal = document.getElementById('videoLightboxModal');
+      const modalVideo = document.getElementById('lightboxVideo');
+      const modalCaption = document.getElementById('lightboxCaption');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+      
+      // Sort in index order (0 to end)
+      const sortedCards = [...cards].sort((a, b) => {
+        return parseInt(a.getAttribute('data-index')) - parseInt(b.getAttribute('data-index'));
+      });
+      
+      let currentIndex = -1;
+
+      const updateLightboxVideo = (index) => {
+        if (index < 0 || index >= sortedCards.length) return;
+        currentIndex = index;
+        const currentCard = sortedCards[currentIndex];
+        
+        // Find video inside card
+        const video = currentCard.querySelector('video');
+        const title = currentCard.querySelector('.interaction-title').textContent;
+
+        modalVideo.style.opacity = '0';
+        modalVideo.style.transform = 'scale(0.95)';
+        
+        setTimeout(() => {
+          modalVideo.src = video.src;
+          modalCaption.textContent = `${title} — Krishna Banerjee`;
+          
+          modalVideo.onloadeddata = () => {
+            modalVideo.style.opacity = '1';
+            modalVideo.style.transform = 'scale(1)';
+            modalVideo.play().catch(e => console.log("Auto play prevented inside modal"));
+          };
+          setTimeout(() => {
+            modalVideo.style.opacity = '1';
+            modalVideo.style.transform = 'scale(1)';
+          }, 50);
+        }, 150);
+      };
+
+      const openLightbox = (card) => {
+        currentIndex = sortedCards.indexOf(card);
+        if (currentIndex === -1) return;
+
+        modal.classList.add('active');
+        updateLightboxVideo(currentIndex);
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        modal.classList.remove('active');
+        modalVideo.pause();
+        modalVideo.src = ""; // Clear src to stop bandwidth use
+        document.body.style.overflow = '';
+      };
+
+      const nextVideo = () => {
+        if (sortedCards.length <= 1) return;
+        let nextIdx = (currentIndex + 1) % sortedCards.length;
+        updateLightboxVideo(nextIdx);
+      };
+
+      const prevVideo = () => {
+        if (sortedCards.length <= 1) return;
+        let prevIdx = (currentIndex - 1 + sortedCards.length) % sortedCards.length;
+        updateLightboxVideo(prevIdx);
+      };
+
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openLightbox(card);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', nextVideo);
+      prevBtn.addEventListener('click', prevVideo);
+
+      modal.addEventListener('click', (e) => {
+        // Close if click on background backdrop, but NOT if click on controls/video player
+        if (e.target === modal || e.target === modal.querySelector('.lightbox-content')) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+          nextVideo();
+        } else if (e.key === 'ArrowLeft') {
+          prevVideo();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

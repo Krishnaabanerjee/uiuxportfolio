@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs, Writings & Journaling — Krishna Banerjee</title>
+  <meta name="description" content="Thoughts on design, process, and lessons learned by Krishna Banerjee. Featured articles on wireframing and choosing UI/UX over frontend.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- Tech Design Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Main Container -->
+  <div class="blogs-page-container">
+    
+    <!-- Top Back Navigation Header -->
+    <header class="blogs-page-header">
+      <a href="index.html" class="back-link magnetic">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="back-arrow-svg">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to home
+      </a>
+    </header>
+
+    <!-- Page Content -->
+    <main class="blogs-main-content">
+      <h1 class="blogs-page-title">A collection of thoughts, experiences, <br>and lessons gathered along the way</h1>
+
+      <!-- Two Column Blogs Cards Grid -->
+      <div class="blogs-grid">
+        
+        <!-- Card 1: Skipping Wireframes -->
+        <a href="https://medium.com/@banerjeekb/the-cost-of-skipping-wireframes-a-lesson-from-my-ui-ux-internship-205ca12befcc" target="_blank" rel="noopener noreferrer" class="blog-card">
+          <div class="blog-card-content">
+            <span class="blog-card-index">01</span>
+            <h3 class="blog-card-title">The Cost of Skipping Wireframes: A Lesson From My UI/UX Internship</h3>
+            <p class="blog-card-meta">3 min read · Medium</p>
+            <p class="blog-card-description">Why rushing from research to high-fidelity under deadline pressure cost me more time than it saved and the habit I built from that mistake.</p>
+          </div>
+          <div class="blog-arrow-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="blog-arrow-svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 2: UI/UX over Frontend -->
+        <a href="https://medium.com/@banerjeekb/why-i-chose-to-learn-ui-ux-over-frontend-development-my-personal-journey-8451941482ac" target="_blank" rel="noopener noreferrer" class="blog-card">
+          <div class="blog-card-content">
+            <span class="blog-card-index">02</span>
+            <h3 class="blog-card-title">Why I Chose to Learn UI/UX Over Frontend Development: My Personal Journey</h3>
+            <p class="blog-card-meta">3 min read · Medium</p>
+            <p class="blog-card-description">The moment I realised I cared more about why the button goes there than how to code it and what happened when I followed that instinct.</p>
+          </div>
+          <div class="blog-arrow-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="blog-arrow-svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Footer Section (Identical to homepage footer) -->
+  <footer class="footer-section" id="footer">
+    <div class="footer-container">
+      
+      <!-- Top Row: Links and Description -->
+      <div class="footer-top-row">
+        <!-- Left Column: Links -->
+        <div class="footer-links-col">
+          <div class="footer-links">
+            <a href="mailto:banerjeekrishnaaa35@gmail.com" class="footer-link">EMAIL</a>
+            <a href="https://www.linkedin.com/in/krishna-banerjee-384554218" target="_blank" class="footer-link">LINKEDIN</a>
+            <a href="https://behance.net/krishnaabanerjee" target="_blank" class="footer-link">BEHANCE</a>
+            <a href="https://instagram.com/kryzen_ui_ux" target="_blank" class="footer-link">@KRYZEN_UI_UX</a>
+          </div>
+        </div>
+        
+        <!-- Right Column: Paragraph -->
+        <div class="footer-desc-col">
+          <p class="footer-description">Open to freelance projects and full-time UI/UX roles. If you have a product that needs better design thinking then reach out.</p>
+        </div>
+      </div>
+      
+      <!-- Bottom Row: Heading (Full Width for 2-row layout) -->
+      <div class="footer-heading-row">
+        <h2 class="footer-heading">Let's build something <br>worth using.</h2>
+      </div>
+      
+      <!-- Giant Star Graphic (absolutely positioned behind/cropped) -->
+      <div class="footer-star-wrap">
+        <svg viewBox="0 0 200 200" class="footer-star-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,10 113.8,66.2 163.6,36.4 133.8,86.2 190,100 133.8,113.8 163.6,163.6 113.8,133.8 100,190 86.2,133.8 36.4,163.6 66.2,113.8 10,100 66.2,86.2 36.4,36.4 86.2,66.2" fill="#B7E900" />
+        </svg>
+      </div>
+      
+      <!-- Bottom Metadata Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Krishna Banerjee. Designed in Figma.</p>
+        <p class="footer-location">West Bengal, India · Open to Remote</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script src="src/cursor.js"></script>
+</body>
+</html>

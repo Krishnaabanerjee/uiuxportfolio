@@ -3,43 +3,63 @@
  * ---------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Select all floating image cards
+  // Select all floating image cards with coordinates and stacking properties
   const cards = [
     {
       el: document.querySelector('.card-scenic'),
       baseRot: -4,
       parallaxFactor: 0.04, // Intensity of X/Y drift
       tiltIntensity: 12,    // Degrees of rotational tilt
+      stackOffsetX: -70,    // Horizontal offset in center stack (2x smaller)
+      stackOffsetY: -20,    // Vertical offset in center stack (2x smaller)
+      stackRot: -12,        // Stack rotation angle
+      stackScale: 0.9,      // Deepest card scale
       currentX: 0,
       currentY: 0,
-      currentRot: -4
+      currentRot: -4,
+      currentScale: 1
     },
     {
       el: document.querySelector('.card-bicycle'),
       baseRot: 3,
       parallaxFactor: 0.025,
       tiltIntensity: -8,
+      stackOffsetX: -22,
+      stackOffsetY: 10,
+      stackRot: 4,
+      stackScale: 0.94,
       currentX: 0,
       currentY: 0,
-      currentRot: 3
+      currentRot: 3,
+      currentScale: 1
     },
     {
       el: document.querySelector('.card-laptop'),
       baseRot: -3,
       parallaxFactor: 0.03,
       tiltIntensity: 10,
+      stackOffsetX: 20,
+      stackOffsetY: -25,
+      stackRot: -5,
+      stackScale: 0.97,
       currentX: 0,
       currentY: 0,
-      currentRot: -3
+      currentRot: -3,
+      currentScale: 1
     },
     {
       el: document.querySelector('.card-portrait'),
       baseRot: 4,
       parallaxFactor: 0.045,
       tiltIntensity: -7,
+      stackOffsetX: 68,
+      stackOffsetY: 15,
+      stackRot: 10,
+      stackScale: 1.0,
       currentX: 0,
       currentY: 0,
-      currentRot: 4
+      currentRot: 4,
+      currentScale: 1
     }
   ];
 
@@ -55,6 +75,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animation interpolation speed (Ease out factor)
   const easeFactor = 0.08;
+
+  // Background hover variables for whitespace stack trigger
+  const heroSection = document.getElementById('home');
+  let isHoveringHero = false;
+  let stackProgress = 0; // 0 = floating, 1 = stacked
+
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', () => {
+      isHoveringHero = true;
+      heroSection.classList.add('stack-active');
+    });
+    
+    heroSection.addEventListener('mouseleave', () => {
+      isHoveringHero = false;
+      heroSection.classList.remove('stack-active');
+    });
+  }
+
+  // Update layout dimensions for relative positioning math
+  function updateLayoutDimensions() {
+    if (!heroSection) return;
+    const heroRect = heroSection.getBoundingClientRect();
+    const targetCenterX = heroRect.width / 2;
+    // Align stack center slightly lower so it frames the content beautifully
+    const targetCenterY = heroRect.height / 2 + 30; 
+
+    cards.forEach(card => {
+      if (!card.el) return;
+      card.cardWidth = card.el.offsetWidth || 130;
+      card.cardHeight = card.el.offsetHeight || 152;
+      card.offsetLeft = card.el.offsetLeft;
+      card.offsetTop = card.el.offsetTop;
+      
+      // Calculate delta to align card center to stack center
+      card.deltaX = targetCenterX - (card.offsetLeft + card.cardWidth / 2);
+      card.deltaY = targetCenterY - (card.offsetTop + card.cardHeight / 2);
+    });
+  }
+
+  // Bind layout calculation on resize, load, and DOMContentLoaded
+  updateLayoutDimensions();
+  window.addEventListener('resize', updateLayoutDimensions);
+  window.addEventListener('load', updateLayoutDimensions);
+
+  // Bind z-index sorting on card hover to pop it to front
+  cards.forEach(card => {
+    if (!card.el) return;
+    card.el.addEventListener('mouseenter', () => {
+      card.el.style.zIndex = '50';
+    });
+    card.el.addEventListener('mouseleave', () => {
+      card.el.style.zIndex = '';
+    });
+  });
 
   // 1. Core Parallax Loop
   let currentCardYOffset = 0;
@@ -74,22 +148,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const normX = (mouseX - centerX) / centerX;
     const normY = (mouseY - centerY) / centerY;
 
-    // A. Hero Floating Images Mouse Parallax
+    // Smoothly update stacking transition percentage
+    if (isHoveringHero) {
+      stackProgress += (1 - stackProgress) * 0.12;
+    } else {
+      stackProgress += (0 - stackProgress) * 0.12;
+    }
+
+    // A. Hero Floating Images Mouse Parallax & Collage Stack Blend
     cards.forEach((card) => {
       if (!card.el) return;
 
-      // Target offsets based on normalized cursor position and factor
-      const targetX = normX * (window.innerWidth * card.parallaxFactor);
-      const targetY = normY * (window.innerHeight * card.parallaxFactor);
-      const targetRot = card.baseRot + (normX * card.tiltIntensity);
+      // Base card dimensions (default height)
+      const hOffset = -card.cardHeight / 2;
+
+      // state 1: Floating
+      const floatX = normX * (window.innerWidth * card.parallaxFactor);
+      const floatY = hOffset + normY * (window.innerHeight * card.parallaxFactor);
+      const floatRot = card.baseRot + (normX * card.tiltIntensity);
+      const floatScale = 1;
+
+      // state 2: Stacked (Interactive horizontal fan-out)
+      const widthFactor = window.innerWidth < 992 ? 0.75 : 1.0;
+      const mouseFanX = 1.0 + Math.abs(normX) * 0.6;
+      const stackX = card.deltaX + (card.stackOffsetX * widthFactor * mouseFanX) + (normX * 15);
+      const stackY = card.deltaY + (card.stackOffsetY * widthFactor) + (normY * 15);
+      const stackRot = card.stackRot + (normX * 6);
+      const stackScale = card.stackScale;
+
+      // Blended values
+      const targetX = floatX * (1 - stackProgress) + stackX * stackProgress;
+      const targetY = floatY * (1 - stackProgress) + stackY * stackProgress;
+      const targetRot = floatRot * (1 - stackProgress) + stackRot * stackProgress;
+      const targetScale = floatScale * (1 - stackProgress) + stackScale * stackProgress;
 
       // Lerp calculations for ultra-smooth fluid transitions
       card.currentX += (targetX - card.currentX) * easeFactor;
       card.currentY += (targetY - card.currentY) * easeFactor;
       card.currentRot += (targetRot - card.currentRot) * easeFactor;
+      card.currentScale += (targetScale - card.currentScale) * easeFactor;
 
-      // Apply style transforms. Note calc(-50% + Y) keeps them aligned with their CSS centering
-      card.el.style.transform = `translate3d(${card.currentX}px, calc(-50% + ${card.currentY}px), 0) rotate(${card.currentRot}deg)`;
+      // Apply style transforms
+      card.el.style.transform = `translate3d(${card.currentX}px, ${card.currentY}px, 0) rotate(${card.currentRot}deg) scale(${card.currentScale})`;
     });
 
     // B. Projects Section Scroll Parallax (Dual-track column slide + inner image window drift)
@@ -439,4 +539,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   initLabScrollReveal();
+
+  // 8. MOBILE HAMBURGER MENU DRAWER
+  function initMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+    const drawerClose = document.getElementById('drawerClose');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    if (menuToggle && mobileMenuDrawer) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenuDrawer.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Lock background scrolling
+      });
+    }
+
+    if (drawerClose && mobileMenuDrawer) {
+      drawerClose.addEventListener('click', () => {
+        mobileMenuDrawer.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock background scrolling
+      });
+    }
+
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenuDrawer) {
+          mobileMenuDrawer.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  }
+
+  initMobileMenu();
 });
