@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Blank Screen Problem: What No One Tells You About Creative Block — Krishna Banerjee</title>
+  <meta name="description"
+    content="Staring at a blank Figma frame is a specific kind of pressure. Here is what I've learned about navigating creative block, moving away from the screen, and regaining focus.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- Tech Design Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Blog Post Container -->
+  <div class="blog-post-page-container">
+
+    <!-- Top Back Navigation Header -->
+    <header class="blog-post-header">
+      <a href="blogs.html" class="back-link magnetic">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"
+          stroke-linecap="round" stroke-linejoin="round" class="back-arrow-svg">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to writings
+      </a>
+    </header>
+
+    <!-- Split Layout Grid -->
+    <div class="blog-post-split-layout">
+
+      <!-- Left Sidebar (Sticky Table of Contents, Share, AI Summary) -->
+      <aside class="blog-post-sidebar">
+
+        <!-- Table of Contents -->
+        <div class="blog-sidebar-widget toc-widget">
+          <h4 class="sidebar-widget-title">Table Of Contents</h4>
+          <nav class="toc-nav">
+            <a href="#intro" class="toc-link active" id="link-intro">Introduction</a>
+            <a href="#not-what-you-think" class="toc-link" id="link-not-what-you-think">It Doesn't Look Like What You
+              Think</a>
+            <a href="#screen-pain" class="toc-link" id="link-screen-pain">The Specific Pain of Designing from a
+              Screen</a>
+            <a href="#what-ive-learned" class="toc-link" id="link-what-ive-learned">What I've Learned (Sometimes the
+              Hard Way)</a>
+            <a href="#honest-truth" class="toc-link" id="link-honest-truth">The Honest Truth About Creative Block</a>
+          </nav>
+        </div>
+
+      </aside>
+
+      <!-- Right Main Content Area -->
+      <article class="blog-post-article">
+        <h1 class="blog-post-title">The Blank Screen Problem: What No One Tells You About Creative Block</h1>
+
+        <div class="blog-post-author-meta">
+          <span class="author-name">Krishna Banerjee</span>
+          <span>·</span>
+          <span>UI/UX Designer</span>
+          <span>·</span>
+          <span>Last Update: June 27, 2026</span>
+        </div>
+
+        <!-- Cover Image -->
+        <div class="blog-post-cover-wrap">
+          <img src="assets/blog_cover.png" alt="Creative Block Illustration" class="blog-post-cover-img">
+        </div>
+
+        <div class="blog-post-body">
+
+          <!-- Introduction Section -->
+          <section id="intro" class="blog-section">
+            <p>There's a specific kind of silence that happens when you open Figma, stare at a new frame, and feel
+              absolutely nothing.</p>
+            <p>No ideas. No spark. Just the cursor blinking at you like it's waiting for you to figure your life out.
+            </p>
+            <p>I've been there more times than I want to admit.</p>
+            <p>As a UI/UX designer, people assume creativity is just… on. Like a tap you turn. Like you wake up, open
+              your laptop, and brilliant concepts just pour out. But nobody really talks about the days when the well is
+              bone dry, when you've been staring at the same artboard for two hours and the most creative thing you've
+              managed is changing the background color from <code>#0A0A0A</code> to <code>#111111</code>.</p>
+            <p>That's creative block. And it hits designers differently.</p>
+          </section>
+
+          <hr>
+
+          <!-- Section 1 -->
+          <section id="not-what-you-think" class="blog-section">
+            <h2>It Doesn't Look Like What You Think</h2>
+            <p>When I started transitioning from frontend development to design, I thought creative block would feel
+              dramatic, like a writer sitting in a dark room, staring at a rain-soaked window.</p>
+            <p>It's not like that at all.</p>
+            <p>For me, it feels like <em>flatness</em>. You open your references folder. You scroll Dribbble. You look
+              at Behance for forty minutes. You feel inspired for about twelve seconds, open a new frame, and then…
+              nothing translates. Everything you try looks derivative. Every layout feels like something you've already
+              seen. Every color choice feels wrong.</p>
+            <p>The frustrating part? You <em>know</em> what good design looks like. That's almost what makes it worse.
+              You have taste. You just can't seem to catch up to it right now.</p>
+          </section>
+
+          <hr>
+
+          <!-- Section 2 -->
+          <section id="screen-pain" class="blog-section">
+            <h2>The Specific Pain of Designing from a Screen</h2>
+            <p>Here's something I've noticed about myself and I think it applies to a lot of self-taught designers.</p>
+            <p>When I'm in a good creative flow, I draw. In my sketchbook, on the margins of notebooks, sometimes just
+              doodles that go nowhere. It's loose and exploratory and it doesn't have to be anything.</p>
+            <p>But when creative block hits, I stop doing that. I go straight to the screen, as if forcing myself to "be
+              productive" will somehow unlock the ideas.</p>
+            <p>It never works. The screen demands commitment. Every shape you place feels permanent. Every choice asks
+              to be justified. The blank Figma frame is not a safe space to be uncertain, it feels like a test you
+              haven't studied for.</p>
+            <p>That pressure is exactly what kills the creative flow before it starts.</p>
+          </section>
+
+          <hr>
+
+          <!-- Section 3 -->
+          <section id="what-ive-learned" class="blog-section">
+            <h2>What I've Learned (Sometimes the Hard Way)</h2>
+            <ul>
+              <li><strong>Step away from the screen.</strong> Genuinely. Go outside. I cycle when I can and there's
+                something about movement and nature that quietly restarts something in my head. I'm not solving design
+                problems consciously, but somewhere in the background, things start to loosen up.</li>
+              <li><strong>Go back to the brief.</strong> When everything I try looks wrong, it usually means I've
+                drifted away from the actual problem I'm solving. Re-reading the brief, talking through the user's pain
+                point out loud.. it grounds me again. Design without a clear problem is just decoration.</li>
+              <li><strong>Change the medium.</strong> Pen and paper. Rough, ugly, imperfect sketches that aren't meant
+                to be shown to anyone. There's a different kind of thinking that happens when your hand is moving and
+                there's no undo button.</li>
+              <li><strong>Look outside design.</strong> Some of my best ideas have come from completely unrelated places
+                like a pattern on a flower, the way a building casts a shadow, an old poster at a chai stall. My
+                interests in drawing, nature, and even just wandering around have fed my design sensibility more than
+                any design tutorial ever has.</li>
+              <li><strong>Give yourself permission to make something bad.</strong> This one is hard. But sometimes the
+                only way out of creative block is through it, producing something you know isn't great, just to break
+                the paralysis. The first draft is just a first draft. It's not your portfolio. It doesn't define you.
+              </li>
+            </ul>
+          </section>
+
+          <hr>
+
+          <!-- Section 4 -->
+          <section id="honest-truth" class="blog-section">
+            <h2>The Honest Truth About Creative Block</h2>
+            <p>It comes back. Even after you've dealt with it once, it comes back. I don't think the goal is to never
+              experience it, I think the goal is to stop being terrified of it.</p>
+            <p>Creative block is not a sign that you're not talented. It's not a sign that you chose the wrong career.
+              It's not even a sign that you're stuck.</p>
+            <p>Most of the time, it's a sign that you care. That you have standards. That you're not willing to just
+              ship something mediocre and move on.</p>
+            <p>The blank screen isn't your enemy. It's just asking you to be honest about what you're trying to say and
+              sometimes that takes a minute.</p>
+            <p>Give yourself the minute.</p>
+          </section>
+
+          <div class="blog-post-footer-author">
+            <p>UI/UX Designer and the founder of Kryzen</p>
+          </div>
+        </div>
+      </article>
+
+    </div> <!-- close .blog-post-split-layout -->
+
+    <!-- Read Next Section -->
+    <section class="read-next-section">
+      <h3 class="read-next-title">Read Next</h3>
+      <div class="read-next-grid">
+        
+        <!-- Card 1: Skipping Wireframes -->
+        <a href="https://medium.com/@banerjeekb/the-cost-of-skipping-wireframes-a-lesson-from-my-ui-ux-internship-205ca12befcc" target="_blank" rel="noopener noreferrer" class="blog-card">
+          <div class="blog-card-content">
+            <span class="blog-card-index">01</span>
+            <h3 class="blog-card-title">The Cost of Skipping Wireframes: A Lesson From My UI/UX Internship</h3>
+            <p class="blog-card-meta">3 min read · Medium</p>
+            <p class="blog-card-description">Why rushing from research to high-fidelity under deadline pressure cost me more time than it saved and the habit I built from that mistake.</p>
+          </div>
+          <div class="blog-arrow-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="blog-arrow-svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 2: UI/UX over Frontend -->
+        <a href="https://medium.com/@banerjeekb/why-i-chose-to-learn-ui-ux-over-frontend-development-my-personal-journey-8451941482ac" target="_blank" rel="noopener noreferrer" class="blog-card">
+          <div class="blog-card-content">
+            <span class="blog-card-index">02</span>
+            <h3 class="blog-card-title">Why I Chose to Learn UI/UX Over Frontend Development: My Personal Journey</h3>
+            <p class="blog-card-meta">3 min read · Medium</p>
+            <p class="blog-card-description">The moment I realised I cared more about why the button goes there than how to code it and what happened when I followed that instinct.</p>
+          </div>
+          <div class="blog-arrow-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="blog-arrow-svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </div> <!-- close .blog-post-page-container -->
+
+  <!-- Footer Section -->
+  <footer class="footer-section" id="footer">
+    <div class="footer-container">
+
+      <!-- Top Row: Links and Description -->
+      <div class="footer-top-row">
+        <!-- Left Column: Links -->
+        <div class="footer-links-col">
+          <div class="footer-links">
+            <a href="mailto:banerjeekrishnaaa35@gmail.com" class="footer-link">EMAIL</a>
+            <a href="https://www.linkedin.com/in/krishna-banerjee-384554218" target="_blank"
+              class="footer-link">LINKEDIN</a>
+            <a href="https://behance.net/krishnaabanerjee" target="_blank" class="footer-link">BEHANCE</a>
+            <a href="https://instagram.com/kryzen_ui_ux" target="_blank" class="footer-link">@KRYZEN_UI_UX</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Paragraph -->
+        <div class="footer-desc-col">
+          <p class="footer-description">Open to freelance projects and full-time UI/UX roles. If you have a product that
+            needs better design thinking then reach out.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Heading (Full Width for 2-row layout) -->
+      <div class="footer-heading-row">
+        <h2 class="footer-heading">Let's build something <br>worth using.</h2>
+      </div>
+
+      <!-- Giant Star Graphic (absolutely positioned behind/cropped) -->
+      <div class="footer-star-wrap">
+        <svg viewBox="0 0 200 200" class="footer-star-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon
+            points="100,10 113.8,66.2 163.6,36.4 133.8,86.2 190,100 133.8,113.8 163.6,163.6 113.8,133.8 100,190 86.2,133.8 36.4,163.6 66.2,113.8 10,100 66.2,86.2 36.4,36.4 86.2,66.2"
+            fill="#B7E900" />
+        </svg>
+      </div>
+
+      <!-- Bottom Metadata Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Krishna Banerjee. Designed in Figma.</p>
+        <p class="footer-location">West Bengal, India · Open to Remote</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script src="src/cursor.js"></script>
+
+  <!-- Scroll Highlighting and UI Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.blog-section');
+      const tocLinks = document.querySelectorAll('.toc-link');
+
+      // Smooth scroll for TOC links
+      tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            // Subtract some height for sticky page header offset
+            const offsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - 120;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Intersection Observer to highlight active link
+      const observerOptions = {
+        root: null,
+        rootMargin: '-15% 0px -55% 0px', // Trigger when section is in reading area
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+
+            tocLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+
+</html>
