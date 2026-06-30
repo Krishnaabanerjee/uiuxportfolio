@@ -609,10 +609,9 @@ a {
   left: 6%;
   top: 50%;
   transform: translateY(-50%) rotate(-4deg);
-  width: 65px;
-  height: 76px;
+  width: 90px;
+  height: 105px;
   z-index: 10;
-  animation: floatSlow 8s ease-in-out infinite;
 }
 
 /* Middle Left: Woman with Bicycle */
@@ -620,10 +619,9 @@ a {
   left: 17%;
   top: 38%;
   transform: translateY(-50%) rotate(3deg);
-  width: 65px;
-  height: 76px;
+  width: 90px;
+  height: 105px;
   z-index: 11;
-  animation: floatSlow 6s ease-in-out infinite 1s;
 }
 
 /* Middle Right: Modern Laptop Setup */
@@ -631,10 +629,9 @@ a {
   right: 17%;
   top: 38%;
   transform: translateY(-50%) rotate(-3deg);
-  width: 65px;
-  height: 76px;
+  width: 90px;
+  height: 105px;
   z-index: 12;
-  animation: floatSlow 7s ease-in-out infinite 0.5s;
 }
 
 /* Far Right: Female UI/UX Designer Portrait (Krishna) */
@@ -642,10 +639,9 @@ a {
   right: 6%;
   top: 50%;
   transform: translateY(-50%) rotate(4deg);
-  width: 65px;
-  height: 76px;
+  width: 90px;
+  height: 105px;
   z-index: 13;
-  animation: floatSlow 9s ease-in-out infinite 1.5s;
 }
 
 /* Floating Animations */
@@ -1170,8 +1166,8 @@ a {
   }
   /* Scale down floating images or adapt layout */
   .floating-img-card {
-    width: 50px;
-    height: 62px;
+    width: 80px;
+    height: 94px;
   }
   .card-scenic { left: 2%; }
   .card-portrait { right: 2%; }

@@ -1,136 +1,132 @@
 /* ----------------------------------------------------
- * FLOATING IMAGES CURSOR-REACTIVE 3D PARALLAX & TILT
+ * HERO IMAGE CARDS MANUALLY DRAGGABLE CONTROLLER
  * ---------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Select all floating image cards with coordinates and stacking properties
+  // Select hero floating image cards
   const cards = [
-    {
-      el: document.querySelector('.card-scenic'),
-      baseRot: -4,
-      parallaxFactor: 0.04, // Intensity of X/Y drift
-      tiltIntensity: 12,    // Degrees of rotational tilt
-      stackOffsetX: -70,    // Horizontal offset in center stack (2x smaller)
-      stackOffsetY: -20,    // Vertical offset in center stack (2x smaller)
-      stackRot: -12,        // Stack rotation angle
-      stackScale: 0.9,      // Deepest card scale
-      currentX: 0,
-      currentY: 0,
-      currentRot: -4,
-      currentScale: 1
-    },
-    {
-      el: document.querySelector('.card-bicycle'),
-      baseRot: 3,
-      parallaxFactor: 0.025,
-      tiltIntensity: -8,
-      stackOffsetX: -22,
-      stackOffsetY: 10,
-      stackRot: 4,
-      stackScale: 0.94,
-      currentX: 0,
-      currentY: 0,
-      currentRot: 3,
-      currentScale: 1
-    },
-    {
-      el: document.querySelector('.card-laptop'),
-      baseRot: -3,
-      parallaxFactor: 0.03,
-      tiltIntensity: 10,
-      stackOffsetX: 20,
-      stackOffsetY: -25,
-      stackRot: -5,
-      stackScale: 0.97,
-      currentX: 0,
-      currentY: 0,
-      currentRot: -3,
-      currentScale: 1
-    },
-    {
-      el: document.querySelector('.card-portrait'),
-      baseRot: 4,
-      parallaxFactor: 0.045,
-      tiltIntensity: -7,
-      stackOffsetX: 68,
-      stackOffsetY: 15,
-      stackRot: 10,
-      stackScale: 1.0,
-      currentX: 0,
-      currentY: 0,
-      currentRot: 4,
-      currentScale: 1
-    }
+    { el: document.querySelector('.card-scenic'), baseRot: -4, currentY: 0, currentRot: -4 },
+    { el: document.querySelector('.card-bicycle'), baseRot: 3, currentY: 0, currentRot: 3 },
+    { el: document.querySelector('.card-laptop'), baseRot: -3, currentY: 0, currentRot: -3 },
+    { el: document.querySelector('.card-portrait'), baseRot: 4, currentY: 0, currentRot: 4 }
   ];
 
-  // Mouse Coordinates
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-
-  // Track global mouse position
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Animation interpolation speed (Ease out factor)
-  const easeFactor = 0.08;
-
-  // Background hover variables for whitespace stack trigger
   const heroSection = document.getElementById('home');
-  let isHoveringHero = false;
-  let stackProgress = 0; // 0 = floating, 1 = stacked
-
-  if (heroSection) {
-    heroSection.addEventListener('mouseenter', () => {
-      isHoveringHero = true;
-      heroSection.classList.add('stack-active');
-    });
-    
-    heroSection.addEventListener('mouseleave', () => {
-      isHoveringHero = false;
-      heroSection.classList.remove('stack-active');
-    });
-  }
-
-  // Update layout dimensions for relative positioning math
-  function updateLayoutDimensions() {
-    if (!heroSection) return;
-    const heroRect = heroSection.getBoundingClientRect();
-    const targetCenterX = heroRect.width / 2;
-    // Align stack center slightly lower so it frames the content beautifully
-    const targetCenterY = heroRect.height / 2 + 30; 
-
-    cards.forEach(card => {
-      if (!card.el) return;
-      card.cardWidth = card.el.offsetWidth || 130;
-      card.cardHeight = card.el.offsetHeight || 152;
-      card.offsetLeft = card.el.offsetLeft;
-      card.offsetTop = card.el.offsetTop;
-      
-      // Calculate delta to align card center to stack center
-      card.deltaX = targetCenterX - (card.offsetLeft + card.cardWidth / 2);
-      card.deltaY = targetCenterY - (card.offsetTop + card.cardHeight / 2);
-    });
-  }
-
-  // Bind layout calculation on resize, load, and DOMContentLoaded
-  updateLayoutDimensions();
-  window.addEventListener('resize', updateLayoutDimensions);
-  window.addEventListener('load', updateLayoutDimensions);
+  const easeFactor = 0.08;
 
   // Bind z-index sorting on card hover to pop it to front
   cards.forEach(card => {
     if (!card.el) return;
+    
+    // Resolve width and height
+    card.cardWidth = card.el.offsetWidth || 130;
+    card.cardHeight = card.el.offsetHeight || 152;
+    card.isDragging = false;
+
     card.el.addEventListener('mouseenter', () => {
-      card.el.style.zIndex = '50';
+      if (!card.isDragging) {
+        card.el.style.zIndex = '50';
+      }
     });
     card.el.addEventListener('mouseleave', () => {
-      card.el.style.zIndex = '';
+      if (!card.isDragging) {
+        card.el.style.zIndex = '';
+      }
     });
   });
 
-  // 1. Core Parallax Loop
+  // Dragging Logic: Pure manual drag and drop (one card at a time)
+  let activeDragCard = null;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let dragStartLeft = 0;
+  let dragStartTop = 0;
+
+  cards.forEach(card => {
+    if (!card.el) return;
+    
+    card.el.style.cursor = 'grab';
+
+    const onStart = (e) => {
+      // Allow only one card to be dragged at a time
+      if (activeDragCard) return;
+      // Allow only left mouse clicks
+      if (e.type === 'mousedown' && e.button !== 0) return;
+      
+      e.preventDefault();
+      
+      activeDragCard = card;
+      card.isDragging = true;
+      card.el.classList.add('dragging');
+      card.el.style.cursor = 'grabbing';
+      card.el.style.zIndex = '100'; // Bring to front
+      
+      const pageX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      const pageY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+      
+      dragStartX = pageX;
+      dragStartY = pageY;
+      
+      const computedStyle = window.getComputedStyle(card.el);
+      dragStartLeft = parseFloat(computedStyle.left) || card.el.offsetLeft || 0;
+      dragStartTop = parseFloat(computedStyle.top) || card.el.offsetTop || 0;
+    };
+
+    card.el.addEventListener('mousedown', onStart);
+    card.el.addEventListener('touchstart', onStart, { passive: false });
+  });
+
+  const onMove = (e) => {
+    if (!activeDragCard) return;
+    
+    e.preventDefault();
+    
+    const pageX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+    const pageY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+    
+    const dx = pageX - dragStartX;
+    const dy = pageY - dragStartY;
+    
+    let newLeft = dragStartLeft + dx;
+    let newTop = dragStartTop + dy;
+    
+    if (heroSection) {
+      const heroRect = heroSection.getBoundingClientRect();
+      const minX = 0;
+      const maxX = heroRect.width - activeDragCard.cardWidth;
+      // Shift boundary checks to account for translateY(-50%)
+      const minTop = activeDragCard.cardHeight / 2;
+      const maxTop = heroRect.height - (activeDragCard.cardHeight / 2);
+      
+      newLeft = Math.max(minX, Math.min(maxX, newLeft));
+      newTop = Math.max(minTop, Math.min(maxTop, newTop));
+    }
+    
+    activeDragCard.el.style.left = `${newLeft}px`;
+    activeDragCard.el.style.top = `${newTop}px`;
+    activeDragCard.el.style.transform = `translate3d(0, -50%, 0) rotate(${activeDragCard.baseRot}deg) scale(1.05)`;
+  };
+
+  const onEnd = () => {
+    if (!activeDragCard) return;
+    
+    activeDragCard.el.classList.remove('dragging');
+    activeDragCard.el.style.cursor = 'grab';
+    activeDragCard.el.style.zIndex = '';
+    
+    // Position dropped card with base rotation and standard translateY(-50%)
+    activeDragCard.el.style.transform = `translate3d(0, -50%, 0) rotate(${activeDragCard.baseRot}deg)`;
+    
+    activeDragCard.isDragging = false;
+    activeDragCard = null;
+  };
+
+  window.addEventListener('mousemove', onMove, { passive: false });
+  window.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('mouseup', onEnd);
+  window.addEventListener('touchend', onEnd);
+
+  // 1. Projects and Scroll Parallax Loop
   let currentCardYOffset = 0;
   
   // Store smoothed image Y values for each project card
@@ -141,55 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 
   function animateParallax() {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-
-    // Normalize mouse position relative to center: range [-1, 1]
-    const normX = (mouseX - centerX) / centerX;
-    const normY = (mouseY - centerY) / centerY;
-
-    // Smoothly update stacking transition percentage
-    if (isHoveringHero) {
-      stackProgress += (1 - stackProgress) * 0.12;
-    } else {
-      stackProgress += (0 - stackProgress) * 0.12;
-    }
-
-    // A. Hero Floating Images Mouse Parallax & Collage Stack Blend
-    cards.forEach((card) => {
+    // A. Hero Image Cards Auto-Floating Loop
+    const time = Date.now() * 0.0015; // Time in seconds for floating effect
+    cards.forEach((card, index) => {
       if (!card.el) return;
+      if (card.isDragging) return; // Skip updating position in loop while dragging!
 
-      // Base card dimensions (default height)
-      const hOffset = -card.cardHeight / 2;
+      // JS organic floating drift around its current position
+      const autoFloatY = Math.sin(time + index) * 8;
+      const autoFloatRot = Math.cos(time + index) * 1.2;
 
-      // state 1: Floating
-      const floatX = normX * (window.innerWidth * card.parallaxFactor);
-      const floatY = hOffset + normY * (window.innerHeight * card.parallaxFactor);
-      const floatRot = card.baseRot + (normX * card.tiltIntensity);
-      const floatScale = 1;
+      // Smooth interpolation (Lerp) towards the float target
+      card.currentY += (autoFloatY - card.currentY) * easeFactor;
+      card.currentRot += ((card.baseRot + autoFloatRot) - card.currentRot) * easeFactor;
 
-      // state 2: Stacked (Interactive horizontal fan-out)
-      const widthFactor = window.innerWidth < 992 ? 0.75 : 1.0;
-      const mouseFanX = 1.0 + Math.abs(normX) * 0.6;
-      const stackX = card.deltaX + (card.stackOffsetX * widthFactor * mouseFanX) + (normX * 15);
-      const stackY = card.deltaY + (card.stackOffsetY * widthFactor) + (normY * 15);
-      const stackRot = card.stackRot + (normX * 6);
-      const stackScale = card.stackScale;
-
-      // Blended values
-      const targetX = floatX * (1 - stackProgress) + stackX * stackProgress;
-      const targetY = floatY * (1 - stackProgress) + stackY * stackProgress;
-      const targetRot = floatRot * (1 - stackProgress) + stackRot * stackProgress;
-      const targetScale = floatScale * (1 - stackProgress) + stackScale * stackProgress;
-
-      // Lerp calculations for ultra-smooth fluid transitions
-      card.currentX += (targetX - card.currentX) * easeFactor;
-      card.currentY += (targetY - card.currentY) * easeFactor;
-      card.currentRot += (targetRot - card.currentRot) * easeFactor;
-      card.currentScale += (targetScale - card.currentScale) * easeFactor;
-
-      // Apply style transforms
-      card.el.style.transform = `translate3d(${card.currentX}px, ${card.currentY}px, 0) rotate(${card.currentRot}deg) scale(${card.currentScale})`;
+      // Apply transform with -50% Y shift
+      card.el.style.transform = `translate3d(0, calc(-50% + ${card.currentY}px), 0) rotate(${card.currentRot}deg)`;
     });
 
     // B. Projects Section Scroll Parallax (Dual-track column slide + inner image window drift)
@@ -246,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // C. Skills Stack to Process Section Parallax curtain reveal (Desktop only)
+    // B. Skills Stack to Process Section Parallax curtain reveal (Desktop only)
     if (window.innerWidth > 992) {
       const processSection = document.getElementById('process');
       const skillsStackSection = document.getElementById('skills-stack');
@@ -272,9 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(animateParallax);
   }
-  
+
   // Start parallax loop
   requestAnimationFrame(animateParallax);
+
+
 
   // 2. Individual 3D Perspective Card Tilt on Direct Hover
   cards.forEach((card) => {
@@ -284,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!wrapper) return;
 
     card.el.addEventListener('mousemove', (e) => {
+      if (card.isDragging) return;
       const rect = card.el.getBoundingClientRect();
       
       // Local coordinates inside card [0 to width], [0 to height]
