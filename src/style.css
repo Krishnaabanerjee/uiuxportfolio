@@ -5737,3 +5737,272 @@ body:has(.resume-container:hover) .cursor-ring {
   }
 }
 
+/* ----------------------------------------------------
+ * INTERNSHIP SHOWCASE SUBPAGE (sales-studio.html)
+ * ---------------------------------------------------- */
+
+.internship-page-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 40px 4% 80px 4%;
+}
+
+.internship-header {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.internship-hero-intro {
+  margin-bottom: 70px;
+}
+
+.internship-hero-label {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.internship-hero-desc {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+.internship-projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.project-showcase-card {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.project-showcase-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-showcase-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.project-showcase-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.project-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.showcase-img-frame {
+  background-color: #DFDFDF;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.showcase-img-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.showcase-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-showcase-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+}
+
+.project-main-desc {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #333333;
+}
+
+.project-contrib-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contrib-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.contrib-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contrib-list li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #444444;
+  position: relative;
+  padding-left: 18px;
+}
+
+.contrib-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.project-meta-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.meta-item {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.meta-val {
+  color: #555555;
+}
+
+/* Locked Project Box */
+.locked-visual-box {
+  width: 100%;
+  max-width: 380px;
+  height: 240px;
+  background-color: #F4F4F4;
+  border: 2px dashed #D0D0D0;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.locked-visual-box:hover {
+  border-color: #B0B0B0;
+}
+
+.lock-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.locked-box-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #666666;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .internship-projects-wrapper {
+    gap: 70px;
+  }
+
+  .project-showcase-title {
+    font-size: 2.2rem;
+  }
+
+  .project-showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .internship-page-container {
+    padding-top: 24px;
+  }
+
+  .internship-hero-intro {
+    margin-bottom: 40px;
+  }
+
+  .project-showcase-title {
+    font-size: 1.8rem;
+  }
+
+  .project-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .showcase-img-frame {
+    aspect-ratio: 16 / 10;
+  }
+
+  .locked-visual-box {
+    max-width: 100%;
+    height: 200px;
+  }
+}
+
+
