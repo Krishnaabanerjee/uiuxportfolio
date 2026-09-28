@@ -2291,6 +2291,7 @@ a {
 .process-tag {
   display: inline-block;
   color: var(--accent-green); /* Acid Lime */
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -2299,6 +2300,7 @@ a {
 }
 
 .process-title {
+  font-family: 'Outfit', sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.15;
@@ -2306,111 +2308,131 @@ a {
   color: #FFFFFF; /* Crisp White */
 }
 
-/* 3-Column Grid */
-.process-grid {
+/* 2x2 Bento Process Grid */
+.process-bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   align-items: stretch;
 }
 
-/* Process Card */
-.process-card {
-  background-color: var(--accent-green); /* Solid Acid Lime */
-  color: var(--text-primary); /* Obsidian dark text */
-  border-radius: 20px;
-  padding: 3.5rem 2.5rem;
+.process-bento-card {
+  border-radius: 28px;
+  padding: 2.25rem 2.25rem 0 2.25rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(27, 27, 27, 0.05);
   position: relative;
-  
-  /* Initial state for Framer-style elastic slide-up, scale, and rotate reveal */
-  opacity: 0;
-  will-change: transform, opacity;
-}
-
-/* Staggered delay and distinct rotational entry curves for each card */
-.process-card:nth-child(1) {
-  transform: translateY(80px) scale(0.92) rotate(-2.5deg);
-  transition: transform 0.9s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-  transition-delay: 0s;
-}
-
-.process-card:nth-child(2) {
-  transform: translateY(80px) scale(0.92) rotate(2.5deg);
-  transition: transform 0.9s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-  transition-delay: 0.15s;
-}
-
-.process-card:nth-child(3) {
-  transform: translateY(80px) scale(0.92) rotate(-2.5deg);
-  transition: transform 0.9s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-  transition-delay: 0.3s;
-}
-
-.process-card.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1) rotate(0deg);
-}
-
-.process-card:hover {
-  transition-delay: 0s !important;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 480px;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(183, 233, 0, 0.22), 0 15px 35px rgba(0, 0, 0, 0.2);
-  z-index: 10;
 }
 
-
-
-.process-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3.5rem;
-  width: 100%;
+.process-bento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
 
-.process-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
+/* Card Themes */
+.process-bento-card.card-understand {
+  background-color: var(--accent-green); /* Acid Lime #B7E900 */
+  color: #141414;
 }
 
-.process-card-icon {
-  width: 28px;
-  height: 28px;
-  stroke: var(--text-primary);
-  stroke-width: 2.2;
+.process-bento-card.card-understand .process-bento-title {
+  color: #141414;
 }
 
-.process-number {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1;
-  color: rgba(27, 27, 27, 0.15); /* semi-transparent overlay */
-  letter-spacing: -0.02em;
-  user-select: none;
+.process-bento-card.card-understand .process-bento-desc {
+  color: #2A2A2A;
 }
 
-.process-card-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+.process-bento-card.card-structure,
+.process-bento-card.card-thinking {
+  background-color: #222222; /* Dark Charcoal */
+  color: #FFFFFF;
 }
 
-.process-card-text {
-  font-size: 1.05rem;
-  line-height: 1.6;
+.process-bento-card.card-structure .process-bento-title,
+.process-bento-card.card-thinking .process-bento-title {
+  color: #FFFFFF;
+}
+
+.process-bento-card.card-structure .process-bento-desc,
+.process-bento-card.card-thinking .process-bento-desc {
+  color: #B0B0B0;
+}
+
+.process-bento-card.card-refine {
+  background-color: #5E1EE7; /* Electric Purple */
+  color: #FFFFFF;
+}
+
+.process-bento-card.card-refine .process-bento-title {
+  color: #FFFFFF;
+}
+
+.process-bento-card.card-refine .process-bento-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Typography */
+.process-bento-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.015em;
+}
+
+.process-bento-desc {
+  font-family: var(--font-main);
+  font-size: 0.98rem;
+  line-height: 1.5;
   font-weight: 500;
-  opacity: 0.9;
-  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+/* Bento Visual Stage */
+.process-bento-stage {
+  position: relative;
+  width: calc(100% + 4.5rem);
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  margin-top: 0.5rem;
+  height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.process-bento-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Card 1 & Card 4: Full Cover Bleed */
+.card-understand .process-bento-img,
+.card-refine .process-bento-img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Card 2 & Card 3: Contain Fit (No side cutoffs) */
+.card-structure .process-bento-img,
+.card-thinking .process-bento-img {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.process-bento-card:hover .process-bento-img {
+  transform: scale(1.03);
 }
 
 /* ----------------------------------------------------
@@ -2422,7 +2444,7 @@ a {
     padding: 7rem 8% 6rem 8%;
   }
 
-  .process-grid {
+  .process-bento-grid {
     grid-template-columns: 1fr;
     gap: 2.2rem;
   }
@@ -2431,8 +2453,9 @@ a {
     font-size: 2.8rem;
   }
   
-  .process-card {
-    padding: 2.5rem;
+  .process-bento-card {
+    padding: 2rem 2rem 0 2rem;
+    min-height: 480px;
   }
 }
 
@@ -2445,8 +2468,9 @@ a {
     font-size: 2.2rem;
   }
   
-  .process-card {
-    padding: 2rem;
+  .process-bento-card {
+    padding: 1.8rem 1.8rem 0 1.8rem;
+    min-height: 440px;
   }
   
   .process-card-title {
